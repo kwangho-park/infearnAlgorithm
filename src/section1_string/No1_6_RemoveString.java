@@ -24,11 +24,11 @@ import java.util.Scanner;
  * @author kwang
  *
  */
-public class RemoveString1_6 {
+public class No1_6_RemoveString {
 
 
 	public static void main(String[] args) {
-		RemoveString1_6 removeStr = new RemoveString1_6();
+		No1_6_RemoveString removeStr = new No1_6_RemoveString();
 		
 		Scanner kb = new Scanner(System.in);
 		String str = kb.next();

@@ -45,7 +45,7 @@ import java.util.Scanner;
  * @author kwang
  *
  */
-public class ContinueSum3_5 {
+public class No3_5_ContinueSum {
 
 	// 소요시간 : 30분 (로직/코딩) 
 	// 정답 !
@@ -74,7 +74,7 @@ public class ContinueSum3_5 {
 	
 
 	public static void main(String[] args) {
-		ContinueSum3_5 ContinueSum = new ContinueSum3_5();
+		No3_5_ContinueSum ContinueSum = new No3_5_ContinueSum();
 		
 		Scanner in = new Scanner(System.in);
 		

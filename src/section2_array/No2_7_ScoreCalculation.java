@@ -45,13 +45,13 @@ import java.util.Scanner;
  * @author kwang
  *
  */
-public class ScoreCalculation2_7 {
+public class No2_7_ScoreCalculation {
 
 	// 정답 (설계/코딩 30분소요) 
 	// 강의 풀이와 거의 유사함 
 	public static void main(String[] args) {
 		
-		ScoreCalculation2_7 ScoreCalculation = new ScoreCalculation2_7();
+		No2_7_ScoreCalculation ScoreCalculation = new No2_7_ScoreCalculation();
 		
 		Scanner scan = new Scanner(System.in);
 		int n = scan.nextInt();

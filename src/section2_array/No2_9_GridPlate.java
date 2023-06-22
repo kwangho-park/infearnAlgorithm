@@ -37,7 +37,7 @@ package section2_array;
  * 
  * 
  */
-public class GridPlate2_9 {
+public class No2_9_GridPlate {
 
 	// 강의 수강완료 : 재 도전예정 
 	public static void main(String[] args) {

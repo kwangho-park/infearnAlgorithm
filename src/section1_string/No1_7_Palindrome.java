@@ -24,12 +24,12 @@ import java.util.Scanner;
  * @author kwang
  *
  */
-public class Palindrome1_7 {
+public class No1_7_Palindrome {
 
 	// 강의 풀이 
 	public static void main(String args[]) {
 		
-		Palindrome1_7 Palindrome = new Palindrome1_7();
+		No1_7_Palindrome Palindrome = new No1_7_Palindrome();
 		Scanner in = new Scanner(System.in);
 		String input=in.next();
 		System.out.println(Palindrome.solution(input));
@@ -56,7 +56,7 @@ public class Palindrome1_7 {
 	// 정답 
 	public static void main_pkh(String args[]) {
 		
-		Palindrome1_7 palindrom = new Palindrome1_7();
+		No1_7_Palindrome palindrom = new No1_7_Palindrome();
 		
 		Scanner kb = new Scanner(System.in);
 		String str = kb.next();

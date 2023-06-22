@@ -26,7 +26,7 @@ import java.util.Scanner;
  * @author kwang
  *
  */
-public class CompressionString1_11 {
+public class No1_11_CompressionString {
 
 	// 정답, 강의 확인 예정
 	// 2시간 소요 (설계/코딩) 
@@ -34,7 +34,7 @@ public class CompressionString1_11 {
 		Scanner in = new Scanner(System.in);
 		String input = in.nextLine();
 		
-		CompressionString1_11 CompressionString = new CompressionString1_11();
+		No1_11_CompressionString CompressionString = new No1_11_CompressionString();
 		
 		System.out.println(CompressionString.solution(input));
 	}

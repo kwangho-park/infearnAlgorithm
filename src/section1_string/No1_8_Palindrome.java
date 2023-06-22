@@ -26,7 +26,7 @@ import java.util.Scanner;
  * 3. String 을 효과적으로 수정 할 수 있는 StringBuilder 활용 (팰린드롭)     
  *
  */
-public class Palindrome1_8 {
+public class No1_8_Palindrome {
 
 	
 	// 강의 풀이 
@@ -67,7 +67,7 @@ public class Palindrome1_8 {
 		
 		String result = "";
 		
-		Palindrome1_8 palindrome = new Palindrome1_8(); 
+		No1_8_Palindrome palindrome = new No1_8_Palindrome();
 		
 		result = palindrome.solution_pkh(input);
 		

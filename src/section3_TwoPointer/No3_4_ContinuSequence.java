@@ -42,7 +42,7 @@ import java.util.Scanner;
  * @author dream
  *
  */
-public class ContinuSequence3_4 {
+public class No3_4_ContinuSequence {
 
 	
 	// 소요시간 : 30분 
@@ -97,7 +97,7 @@ public class ContinuSequence3_4 {
 	
 	public static void main(String[] args) {
 		
-		ContinuSequence3_4 ContinuSequence = new ContinuSequence3_4();
+		No3_4_ContinuSequence ContinuSequence = new No3_4_ContinuSequence();
 		
 		Scanner in = new Scanner(System.in);
 		

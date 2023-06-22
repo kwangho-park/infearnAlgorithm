@@ -17,7 +17,7 @@ import java.lang.Character;
  * @author kwang
  *
  */
-public class CharacterConversion1_2 {
+public class No1_2_CharacterConversion {
 
 	// 강의 풀이 
 	public static void main_inflearn(String args[]) { 

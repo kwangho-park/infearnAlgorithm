@@ -33,12 +33,12 @@ import java.util.Scanner;
 *  
 * 
 */
-public class PrimeNumber2_6 {
+public class No2_6_PrimeNumber {
 
 	// 강의 풀이 
 	public static void main(String[] args) {
 		
-		PrimeNumber2_6 PrimeNumber = new PrimeNumber2_6();
+		No2_6_PrimeNumber PrimeNumber = new No2_6_PrimeNumber();
 		
 		Scanner kb = new Scanner(System.in);
 		int n = kb.nextInt();

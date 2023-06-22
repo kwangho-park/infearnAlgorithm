@@ -30,13 +30,13 @@ import java.util.Scanner;
 * 
 * 
 */
-public class PrintBigNum2_1 {
+public class No2_1_PrintBigNum {
 
 	
 	// 강의 풀이 
 	public static void main(String[] args) {
 		
-		PrintBigNum2_1 printBigNum = new PrintBigNum2_1();
+		No2_1_PrintBigNum printBigNum = new No2_1_PrintBigNum();
 		
 		Scanner kb = new Scanner(System.in);
 		
@@ -82,7 +82,7 @@ public class PrintBigNum2_1 {
 		String input1 = in.nextLine();
 		String input2 = in.nextLine();
 		
-		PrintBigNum2_1 printBigNum = new PrintBigNum2_1();
+		No2_1_PrintBigNum printBigNum = new No2_1_PrintBigNum();
 		
 		System.out.println(printBigNum.solution_pkh(input1, input2));
 

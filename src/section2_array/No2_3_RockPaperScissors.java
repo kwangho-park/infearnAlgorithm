@@ -54,12 +54,12 @@ import java.util.Scanner;
 * - 예외조건없는게 로직을 이해하기에 수훨함 (=직관적임)  
 * 
 */
-public class RockPaperScissors2_3 {
+public class No2_3_RockPaperScissors {
 
 	// 강의 풀이 
 	public static void main(String[] args) {
 
-		RockPaperScissors2_3 RockPaperScissors = new RockPaperScissors2_3();
+		No2_3_RockPaperScissors RockPaperScissors = new No2_3_RockPaperScissors();
 		
 		Scanner kb = new Scanner(System.in);
 		int n = kb.nextInt();
@@ -105,7 +105,7 @@ public class RockPaperScissors2_3 {
 	// 정답
 	// 의외로 금방끝났지만 강의로직보다 복잡합  (로직설계 및 코딩 1시간 소요)
 	public static void main_pkh(String[] args) {
-		RockPaperScissors2_3 RockPaperScissors = new RockPaperScissors2_3();
+		No2_3_RockPaperScissors RockPaperScissors = new No2_3_RockPaperScissors();
 		
 		Scanner kb = new Scanner(System.in);
 		int n = kb.nextInt();

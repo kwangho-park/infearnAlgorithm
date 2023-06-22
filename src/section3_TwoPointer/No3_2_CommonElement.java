@@ -51,7 +51,7 @@ import java.util.*;
 * 4. pointer 1,2 값을 비교하여 값이 같은 경우 공통원소로 저장함
 * 
 */
-public class CommonElement3_2 {
+public class No3_2_CommonElement {
 
 	
 	// 강의 풀이 (정답)  
@@ -105,7 +105,7 @@ public class CommonElement3_2 {
 	
 	public static void main(String[] args) {
 
-		CommonElement3_2 commonElement = new CommonElement3_2();
+		No3_2_CommonElement commonElement = new No3_2_CommonElement();
 		
 		Scanner scan = new Scanner(System.in);
 		

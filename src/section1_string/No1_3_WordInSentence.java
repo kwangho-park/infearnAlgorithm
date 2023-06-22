@@ -15,7 +15,7 @@ import java.util.Scanner;
  * @author kwang
  *
  */
-public class WordInSentence1_3 {
+public class No1_3_WordInSentence {
 
 	
 	// 강의 풀이 1

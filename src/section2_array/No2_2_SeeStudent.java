@@ -35,14 +35,14 @@ import java.util.Scanner;
 * 너무 조급하지말고 차분하게 풀어야 문제를 정확하게 이해할 수 있음    
 * 
 */
-public class SeeStudent2_2 {
+public class No2_2_SeeStudent {
 
 	
 	// 정답
 	// 강의 풀이도 맥락이 비슷함
 	public static void main(String[] args) {
 
-		SeeStudent2_2 seeStudent = new SeeStudent2_2();
+		No2_2_SeeStudent seeStudent = new No2_2_SeeStudent();
 		
 		Scanner kb = new Scanner(System.in);
 		int n = kb.nextInt();

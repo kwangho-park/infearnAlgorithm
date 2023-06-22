@@ -59,7 +59,7 @@ import java.util.Scanner;
  * @author dream
  *
  */
-public class TwoArray3_1 {
+public class No3_1_TwoArray {
 
 	
 	// 소요시간 약 30분
@@ -110,7 +110,7 @@ public class TwoArray3_1 {
 
 		Scanner kb = new Scanner(System.in);
 		
-		TwoArray3_1 TwoArray = new TwoArray3_1();
+		No3_1_TwoArray TwoArray = new No3_1_TwoArray();
 		
 		// 입력 받음 // 
 		int n = kb.nextInt();

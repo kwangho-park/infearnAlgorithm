@@ -34,14 +34,14 @@ import java.util.Scanner;
  * @author kwang
  *
  */
-public class Grade2_8 {
+public class No2_8_Grade {
 	
 	// 로직이 감이 안잡힌 문제 (10분고민)  
 	// 강의 풀이 
 	// 재도전 예정
 	public static void main(String[] args) {
 
-		Grade2_8 Grade = new Grade2_8();
+		No2_8_Grade Grade = new No2_8_Grade();
 		
 		Scanner scan = new Scanner(System.in);
 		int n = scan.nextInt();

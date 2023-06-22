@@ -49,7 +49,7 @@ import java.util.Scanner;
 * 3. 구해진값으로 기존의 최대 매출액과 비교 
 * 
 */
-public class MaxSales3_3 {
+public class No3_3_MaxSales {
 
 	// 소요시간 : 20분... 디버깅중 
 	// 정상값이 출력되지않고있음! 
@@ -95,7 +95,7 @@ public class MaxSales3_3 {
 
 	public static void main(String[] args) {
 
-		MaxSales3_3 maxSales = new MaxSales3_3();
+		No3_3_MaxSales maxSales = new No3_3_MaxSales();
 		
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();		// 전체 매출액 기간 

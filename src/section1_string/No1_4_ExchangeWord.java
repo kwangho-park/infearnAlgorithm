@@ -34,12 +34,12 @@ import java.util.Scanner;
  * @author kwang
  *
  */
-public class ExchangeWord1_4 {
+public class No1_4_ExchangeWord {
 
 	// 강의 풀이 
 	public static void main(String[] args) {
 		
-		ExchangeWord1_4 ExchangeWord = new ExchangeWord1_4();
+		No1_4_ExchangeWord ExchangeWord = new No1_4_ExchangeWord();
 		
 		Scanner in = new Scanner(System.in);
 		

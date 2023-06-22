@@ -45,7 +45,7 @@ import java.util.Scanner;
  * @author kwang
  *
  */
-public class Cipher1_12 {
+public class No1_12_Cipher {
 	
 	// 틀림 
 	// 1시간 이상 소요 
@@ -55,7 +55,7 @@ public class Cipher1_12 {
 		String input2 = in.nextLine();			
 		
 	
-		Cipher1_12 cipher =  new Cipher1_12();
+		No1_12_Cipher cipher =  new No1_12_Cipher();
 		
 		System.out.println(cipher.solution(input1, input2));
 	}

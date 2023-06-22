@@ -20,12 +20,12 @@ import java.util.Scanner;
  * @author kwang
  *
  */
-public class ExchangeWord1_5 {
+public class No1_5_ExchangeWord {
 
 	// 강의 풀이 
 	public static void main(String[] args) {
 		
-		ExchangeWord1_5 ExchangeWord = new ExchangeWord1_5();
+		No1_5_ExchangeWord ExchangeWord = new No1_5_ExchangeWord();
 		
 		Scanner in = new Scanner(System.in);
 		

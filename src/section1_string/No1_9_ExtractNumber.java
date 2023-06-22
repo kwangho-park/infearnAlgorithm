@@ -27,7 +27,7 @@ import java.util.Scanner;
  * 2. Character.isDigit() 는 문자타입의 데이터가 숫자인지 확인하는 메소드를 활용 할 수 있음   
  *
  */
-public class ExtractNumber1_9 {
+public class No1_9_ExtractNumber {
 
 	
 	// 강의 풀이
@@ -60,7 +60,7 @@ public class ExtractNumber1_9 {
 		Scanner in = new Scanner(System.in);
 		String input = in.nextLine();
 		
-		ExtractNumber1_9 extractNumber = new ExtractNumber1_9();
+		No1_9_ExtractNumber extractNumber = new No1_9_ExtractNumber();
 		
 		System.out.println(extractNumber.solution_pkh(input));
 		

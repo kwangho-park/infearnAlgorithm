@@ -35,11 +35,11 @@ import java.util.Scanner;
 * [보완점]
 * 다시 도전 필요!
 */
-public class PrimeNumber2_5 {
+public class No2_5_PrimeNumber {
 
 	// 강의 풀이 
 	public static void main(String[] args) {
-		PrimeNumber2_5 PrimeNumber = new PrimeNumber2_5();
+		No2_5_PrimeNumber PrimeNumber = new No2_5_PrimeNumber();
 		Scanner kb= new Scanner(System.in);
 		int n = kb.nextInt();
 		System.out.print(PrimeNumber.solution(n));

@@ -45,12 +45,12 @@ import java.util.Scanner;
  * @author dream
  *
  */
-public class Mountaintop2_10 {
+public class No2_10_Mountaintop {
 
 	
 	
 	public static void main(String[] args) {
-		Mountaintop2_10 T = new Mountaintop2_10();
+		No2_10_Mountaintop T = new No2_10_Mountaintop();
 		
 		Scanner kb = new Scanner(System.in);
 		
@@ -60,7 +60,7 @@ public class Mountaintop2_10 {
 	// 틀림 : 가장 바깥쪽을 처리하는 로직을 설계못하고, 상하좌우 요소값만을 구한상태  
 	public static void main_pkh(String[] args) {
 		
-		Mountaintop2_10 Mountaintop = new Mountaintop2_10();
+		No2_10_Mountaintop Mountaintop = new No2_10_Mountaintop();
 		
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();

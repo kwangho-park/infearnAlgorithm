@@ -33,7 +33,7 @@ import java.util.Scanner;
 * 4. arraylist 에 저장된 요소를 출력 
 * 
 */
-public class Fibonacci2_4 {
+public class No2_4_Fibonacci {
 
 	
 	public int[] solution(int n) {
@@ -49,7 +49,7 @@ public class Fibonacci2_4 {
 	// 강의 풀이 
 	public static void main(String[] args) {
 		
-		Fibonacci2_4 Fibonacci = new Fibonacci2_4();
+		No2_4_Fibonacci Fibonacci = new No2_4_Fibonacci();
 		Scanner kb = new Scanner(System.in);
 		int n=kb.nextInt();
 		for(int x : Fibonacci.solution(n)) System.out.print(x+" ");

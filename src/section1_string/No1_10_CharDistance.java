@@ -21,7 +21,7 @@ import java.util.Scanner;
  * @author kwang
  *
  */
-public class CharDistance1_10 {
+public class No1_10_CharDistance {
 
 	
 	
@@ -38,7 +38,7 @@ public class CharDistance1_10 {
 		String target = in.next();
 		
 		
-		CharDistance1_10 charDistance = new CharDistance1_10();
+		No1_10_CharDistance charDistance = new No1_10_CharDistance();
 		
 		System.out.println(charDistance.solution(input, target));
 	}
