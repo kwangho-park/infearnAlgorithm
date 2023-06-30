@@ -1,13 +1,21 @@
 package section4_hash_set;
 
+import sun.applet.Main;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
 /**
- * 3. 매출액의 종류
+ * 3. 매출액의 종류 (hash, sliding window)
  * 설명
  *
  * 현수의 아빠는 제과점을 운영합니다. 현수아빠는 현수에게 N일 동안의 매출기록을 주고 연속된 K일 동안의 매출액의 종류를
  * 각 구간별로 구하라고 했습니다.
  * 만약 N=7이고 7일 간의 매출기록이 아래와 같고, 이때 K=4이면
  * 20 12 20 10 23 17 10
+ *
+ * 매출종류 : 연속된 K일 동안의 매출종류 (즉, 중복제거)
  *
  * 각 연속 4일간의 구간의 매출종류는
  * 첫 번째 구간은 [20, 12, 20, 10]는 매출액의 종류가 20, 12, 10으로 3이다.
@@ -20,7 +28,7 @@ package section4_hash_set;
  *
  *
  * 입력
- * 첫 줄에 N(5<=N<=100,000)과 K(2<=K<=N)가 주어집니다.
+ * 첫 줄에 일자 구간 N(5<=N<=100,000)과 매출액 산정 기간 K(2<=K<=N)가 주어집니다.
  * 두 번째 줄에 N개의 숫자열이 주어집니다. 각 숫자는 500이하의 음이 아닌 정수입니다.
  *
  *
@@ -33,11 +41,44 @@ package section4_hash_set;
  * 20 12 20 10 23 17 10
  *
  * 예시 출력 1
- *3 4 4 3
+ * 3 4 4 3
  *
  * [로직] - hash, sliding window 알고리즘
+ * 1. 사용자로부터 일자 n과 연속된  K일을  입력받아 int type 변수에 저장
+ * 2. n일 동안의 매출기록을 int[] 배열에 저장
+ * 3. 포인터 변수 초기화 : start point 0, end point k
+ * 4. 매출기록을 반복하면서 hashmap을 요소로 갖는 리스트 (salseSectionList) 에 생성하며 중복된것은 필터링함 (반복문 종료전 포인터들의 값을 1씩 증가함)
  *
  *
  */
 public class No4_3_TypeOfSales {
+    public ArrayList<Integer> solution(int n, int k, int[] arr){
+        ArrayList<Integer> answer = new ArrayList<>();
+        HashMap<Integer, Integer> HM = new HashMap<>();
+        for(int i=0; i<k-1; i++){
+            HM.put(arr[i], HM.getOrDefault(arr[i], 0)+1);
+        }
+        int lt=0;
+        for(int rt=k-1; rt<n; rt++){
+            HM.put(arr[rt], HM.getOrDefault(arr[rt], 0)+1);
+            answer.add(HM.size());
+            HM.put(arr[lt], HM.get(arr[lt])-1);
+            if(HM.get(arr[lt])==0) HM.remove(arr[lt]);
+            lt++;
+        }
+        return answer;
+    }
+
+    public static void main(String[] args){
+        No4_3_TypeOfSales T = new No4_3_TypeOfSales();
+        Scanner kb = new Scanner(System.in);
+        int n=kb.nextInt();
+        int k=kb.nextInt();
+        int[] arr=new int[n];
+        for(int i=0; i<n; i++){
+            arr[i]=kb.nextInt();
+        }
+        for(int x : T.solution(n, k, arr)) System.out.print(x+" ");
+    }
+
 }
