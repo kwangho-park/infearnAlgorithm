@@ -1,7 +1,10 @@
 package section5_stack_queue;
 
+import java.util.Scanner;
+import java.util.Stack;
+
 /**
- * 3. 크레인 인형뽑기(카카오)
+ * 3. 크레인 인형뽑기(카카오 기출문제)
  * 설명
  *
  * 게임개발자인 죠르디는 크레인 인형뽑기 기계를 모바일 게임으로 만들려고 합니다.
@@ -47,18 +50,70 @@ package section5_stack_queue;
  *
  *
  * 예시 입력 1
- * 5
- * 0 0 0 0 0
+ * 5                // 변수 N (board 의 행렬크기)
+ * 0 0 0 0 0        // 이차원배열 board
  * 0 0 1 0 3
  * 0 2 5 0 1
  * 4 2 4 4 2
  * 3 5 1 3 1
- * 8
- * 1 5 3 5 1 2 1 4
+ * 8                 // 변수 M (크레인 동선의 길이)
+ * 1 5 3 5 1 2 1 4  // 배열리스트 move (크레인 동선)
  *
  * 예시 출력 1
  * 4
  *
+ * [참고] stack 자료구조에 담을 수 있는 데이터 수는 제한이 없음
+ *
+ * [로직]
+ * 1. 입력받은 2차원 배열으로 int[][] board 에 초기값 생성, ArrayList move 에 크레인의 동선을 저장  (길이 M)
+ * 2. move 배열을 순차적으로 실행하면서 value 를 꺼내고, 2차원 배열 board 의 열(column) 에서 0이 아닌 행(row) 가 나올때 까지 찾음
+ * 3. 0 이외의 값이 나오면 꺼내고 해당 위치를 0으로 변경
+ * 4. 꺼낸 값을 stack 자료구조에 저장
+ * 5. stack 자료구조에 직전에 저장된 값과 동일 한경우 count 값을 2증가 시키고 해당 값들을 stack 에서 pop-up 시킴 (=제거)
+ * 6. 최종 count 값을 반환
+ *
  */
 public class No5_3_clawMachineGame {
+
+    public int solution(int[][] board , int[] moves){
+        int answer = 0;
+        Stack<Integer> stack = new Stack<>();
+
+        for(int position:moves){
+            for(int loop=0;loop<board.length;loop++){       // board.length (=row length)
+                if(board[loop][position-1] !=0) {            // 인형을 꺼냄
+                    int tmp = board[loop][position - 1];
+                    board[loop][position - 1] = 0;            // 꺼낸 위치를 0으로 초기화
+
+                    if (!stack.isEmpty() && tmp == stack.peek()) {
+                        stack.pop();                        // stack 의 인형을 터트림
+                    } else {
+                        stack.push(tmp);                    // stack 에 인형을 넣음
+                    }
+                    break;
+                }
+
+            }
+        }
+
+        return answer;
+    }
+    public static void main(String[] args){
+        No5_3_clawMachineGame clawMachineGame = new No5_3_clawMachineGame();
+        Scanner kb = new Scanner(System.in);
+        int n = kb.nextInt();
+        int[][] board = new int[n][n];
+
+        for(int loop=0;loop<n;loop++){
+            for(int loop2=0;loop2<n;loop2++){
+                board[loop][loop2] = kb.nextInt();
+            }
+        }
+        int m=kb.nextInt();
+        int[] moves = new int[m];
+        for(int loop=0;loop<m;loop++){
+            moves[loop] = kb.nextInt();
+        }
+        System.out.println(clawMachineGame.solution(board, moves));
+    }
 }
