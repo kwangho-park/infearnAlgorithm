@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
- * 3. 크레인 인형뽑기(카카오 기출문제)
+ * 3. 크레인 인형뽑기(카카오 기출문제) (stack)
  * 설명
  *
  * 게임개발자인 죠르디는 크레인 인형뽑기 기계를 모바일 게임으로 만들려고 합니다.

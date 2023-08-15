@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
- * 5. 쇠막대기
+ * 5. 쇠막대기 (stack)
  * 설명
  *
  * 여러 개의 쇠막대기를 레이저로 절단하려고 한다. 효율적인 작업을 위해서 쇠막대기를 아래에서 위로 겹쳐 놓고,
