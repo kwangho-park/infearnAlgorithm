@@ -1,5 +1,9 @@
 package section5_stack_queue;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
 /**
  * 7. 교육과정 설계 (queue) 
  * 설명
@@ -34,12 +38,32 @@ package section5_stack_queue;
  *
  *
  * 예시 입력 1
- *
  * CBA
  * CBDAGE
- * 예시 출력 1
  *
+ * 예시 출력 1
  * YES
  */
 public class No5_7_CourseOfStudy {
+
+    // 정답
+    public String solution(String need, String plan){
+        String answer="YES";
+        Queue<Character> Q=new LinkedList<>();
+        for(char x : need.toCharArray()) Q.offer(x);
+        for(char x : plan.toCharArray()){
+            if(Q.contains(x)){
+                if(x!=Q.poll()) return "NO";
+            }
+        }
+        if(!Q.isEmpty()) return "NO";
+        return answer;
+    }
+    public static void main(String[] args){
+        No5_7_CourseOfStudy T = new No5_7_CourseOfStudy();
+        Scanner kb = new Scanner(System.in);
+        String a=kb.next();
+        String b=kb.next();
+        System.out.println(T.solution(a, b));
+    }
 }
