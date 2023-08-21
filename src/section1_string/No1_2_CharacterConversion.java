@@ -4,57 +4,57 @@ import java.util.Scanner;
 import java.lang.Character;
 /**
  *
- * ´ë¼Ò¹®ÀÚ º¯È¯ (String)
+ * ëŒ€ì†Œë¬¸ì ë³€í™˜ (String)
  *
- * ´ë¹®ÀÚ¿Í ¼Ò¹®ÀÚ°¡ °°ÀÌ Á¸ÀçÇÏ´Â ¹®ÀÚ¿­À» ÀÔ·Â¹Ş¾Æ ´ë¹®ÀÚ´Â ¼Ò¹®ÀÚ·Î
- * ¼Ò¹®ÀÚ´Â ´ë¹®ÀÚ·Î º¯È¯ÇÏ¿© Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
- * 
- * input : Ã¹ ÁÙ¿¡ ¹®ÀÚ¿­ÀÌ ÀÔ·ÂµÈ´Ù. ¹®ÀÚ¿­ÀÇ ±æÀÌ´Â 100À» ³ÑÁö ¾Ê½À´Ï´Ù.  
- * output : Ã¹ ÁÙ¿¡ ´ë¹®ÀÚ´Â ¼Ò¹®ÀÚ·Î, ¼Ò¹®ÀÚ´Â ´ë¹®ÀÚ·Î º¯È¯µÈ ¹®ÀÚ¿­À» Ãâ·ÂÇÕ´Ï´Ù
- * 
- * ¿¹½Ã : StuDY -> sTUdy
+ * ëŒ€ë¬¸ìì™€ ì†Œë¬¸ìê°€ ê°™ì´ ì¡´ì¬í•˜ëŠ” ë¬¸ìì—´ì„ ì…ë ¥ë°›ì•„ ëŒ€ë¬¸ìëŠ” ì†Œë¬¸ìë¡œ
+ * ì†Œë¬¸ìëŠ” ëŒ€ë¬¸ìë¡œ ë³€í™˜í•˜ì—¬ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”.
  *
- * [·ÎÁ÷]
- * 1. ÀÔ·Â¹ŞÀº ¹®ÀÚ¿­(String) À» char[] structure ·Î º¯°æ
- * 2. ¹®ÀÚÇü µ¥ÀÌÅÍ¸¦ ¿ä¼Ò·Î°¡Áø ¹è¿­À» ¹İº¹ÇÏ¸é¼­, ´ë¼Ò¹®ÀÚ¿¡ µû¶ó¼­ º¯È¯ÇÏµµ·Ï ºĞ±âÃ³¸®
+ * input : ì²« ì¤„ì— ë¬¸ìì—´ì´ ì…ë ¥ëœë‹¤. ë¬¸ìì—´ì˜ ê¸¸ì´ëŠ” 100ì„ ë„˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
+ * output : ì²« ì¤„ì— ëŒ€ë¬¸ìëŠ” ì†Œë¬¸ìë¡œ, ì†Œë¬¸ìëŠ” ëŒ€ë¬¸ìë¡œ ë³€í™˜ëœ ë¬¸ìì—´ì„ ì¶œë ¥í•©ë‹ˆë‹¤
+ *
+ * ì˜ˆì‹œ : StuDY -> sTUdy
+ *
+ * [ë¡œì§]
+ * 1. ì…ë ¥ë°›ì€ ë¬¸ìì—´(String) ì„ char[] structure ë¡œ ë³€ê²½
+ * 2. ë¬¸ìí˜• ë°ì´í„°ë¥¼ ìš”ì†Œë¡œê°€ì§„ ë°°ì—´ì„ ë°˜ë³µí•˜ë©´ì„œ, ëŒ€ì†Œë¬¸ìì— ë”°ë¼ì„œ ë³€í™˜í•˜ë„ë¡ ë¶„ê¸°ì²˜ë¦¬
  *
  * @author kwang
  *
  */
 public class No1_2_CharacterConversion {
 
-	// °­ÀÇ Ç®ÀÌ 
-	public static void main_inflearn(String args[]) { 
-		
-		
+	// ê°•ì˜ í’€ì´
+	public static void main_inflearn(String args[]) {
+
+
 		Scanner in = new Scanner(System.in);
-		
+
 		String inputStr = in.next();
-		
+
 		char[] input = inputStr.toCharArray();
-		
+
 		String resultStr = "";
-		
+
 		for(int loop=0 ; loop < input.length;  loop ++) {
-			
- 
+
+
 			if(Character.isUpperCase(input[loop])) {
 				resultStr += Character.toLowerCase(input[loop]);
-				
+
 			}else {
 				resultStr += Character.toUpperCase(input[loop]);
 
 			}
-		
+
 		}
-		
+
 		System.out.println(resultStr);
-		
+
 		return ;
-		
+
 	}
 
-	// µÎ¹øÂ° Ç®ÀÌ (Á¤´ä)
+	// ë‘ë²ˆì§¸ í’€ì´ (ì •ë‹µ)
 	public static void main(String args[]){
 		String answer = "";
 		Scanner in = new Scanner(System.in);
@@ -62,7 +62,7 @@ public class No1_2_CharacterConversion {
 		char[] inputArr = in.nextLine().toCharArray();
 
 		for(char element:inputArr){
-			if(Character.isUpperCase(element)){		// ´ë¹®ÀÚ ºĞ±â
+			if(Character.isUpperCase(element)){		// ëŒ€ë¬¸ì ë¶„ê¸°
 				answer += Character.toString(element).toLowerCase();
 			}else{
 				answer += Character.toString(element).toUpperCase();
@@ -75,7 +75,7 @@ public class No1_2_CharacterConversion {
 
 
 
-	// Ã¹¹ø¤Š Ç®ÀÌ (Á¤´ä)
+	// ì²«ë²ˆì¨° í’€ì´ (ì •ë‹µ)
 	public static void main_first(String args[]) {
 
 		String result = "";

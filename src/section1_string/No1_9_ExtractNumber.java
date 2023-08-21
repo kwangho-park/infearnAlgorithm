@@ -3,82 +3,82 @@ package section1_string;
 import java.util.Scanner;
 
 /**
- * ¼³¸í
- * ¹®ÀÚ¿Í ¼ıÀÚ°¡ ¼¯¿©ÀÖ´Â ¹®ÀÚ¿­ÀÌ ÁÖ¾îÁö¸é ±× Áß ¼ıÀÚ¸¸ ÃßÃâÇÏ¿© ±× ¼ø¼­´ë·Î ÀÚ¿¬¼ö¸¦ ¸¸µì´Ï´Ù.
- * ¸¸¾à ¡°tge0a1h205er¡±¿¡¼­ ¼ıÀÚ¸¸ ÃßÃâÇÏ¸é 0, 1, 2, 0, 5ÀÌ°í ÀÌ°ÍÀ» ÀÚ¿¬¼ö¸¦ ¸¸µé¸é 1205ÀÌ µË´Ï´Ù.
- * 
- * ÃßÃâÇÏ¿© ¸¸µé¾îÁö´Â ÀÚ¿¬¼ö´Â 100,000,000À» ³ÑÁö ¾Ê½À´Ï´Ù.
- * 
- * ÀÔ·Â
- * Ã¹ ÁÙ¿¡ ¼ıÀÚ°¡ ¼¯ÀÎ ¹®ÀÚ¿­ÀÌ ÁÖ¾îÁı´Ï´Ù. ¹®ÀÚ¿­ÀÇ ±æÀÌ´Â 100À» ³ÑÁö ¾Ê½À´Ï´Ù.
- * 
- * Ãâ·Â
- * Ã¹ ÁÙ¿¡ ÀÚ¿¬¼ö¸¦ Ãâ·ÂÇÕ´Ï´Ù.
- * 
- * ¿¹½Ã ÀÔ·Â g0en2T0s8eSoft -> 208
+ * ì„¤ëª…
+ * ë¬¸ìì™€ ìˆ«ìê°€ ì„ì—¬ìˆëŠ” ë¬¸ìì—´ì´ ì£¼ì–´ì§€ë©´ ê·¸ ì¤‘ ìˆ«ìë§Œ ì¶”ì¶œí•˜ì—¬ ê·¸ ìˆœì„œëŒ€ë¡œ ìì—°ìˆ˜ë¥¼ ë§Œë“­ë‹ˆë‹¤.
+ * ë§Œì•½ â€œtge0a1h205erâ€ì—ì„œ ìˆ«ìë§Œ ì¶”ì¶œí•˜ë©´ 0, 1, 2, 0, 5ì´ê³  ì´ê²ƒì„ ìì—°ìˆ˜ë¥¼ ë§Œë“¤ë©´ 1205ì´ ë©ë‹ˆë‹¤.
+ *
+ * ì¶”ì¶œí•˜ì—¬ ë§Œë“¤ì–´ì§€ëŠ” ìì—°ìˆ˜ëŠ” 100,000,000ì„ ë„˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
+ *
+ * ì…ë ¥
+ * ì²« ì¤„ì— ìˆ«ìê°€ ì„ì¸ ë¬¸ìì—´ì´ ì£¼ì–´ì§‘ë‹ˆë‹¤. ë¬¸ìì—´ì˜ ê¸¸ì´ëŠ” 100ì„ ë„˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
+ *
+ * ì¶œë ¥
+ * ì²« ì¤„ì— ìì—°ìˆ˜ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
+ *
+ * ì˜ˆì‹œ ì…ë ¥ g0en2T0s8eSoft -> 208
  * @author dream
- * 
- * ·ÎÁ÷ 
- * 1. ¹®ÀÚ¿Í ¼ıÀÚ°¡ ¼¯ÀÎ ¹®ÀÚ¿­ ÀÔ·Â 
- * 2. String.replaceAll()°ú Á¤±Ô½ÄÀ¸·Î ¼ıÀÚ¸¦ ÃßÃâÇÏ¿© Ãâ·Â º¯¼ö¿¡ ÀúÀå
- * 
- * [Áß¿ä] ¹è¿îÁ¡ 
- * 1. ¹®Á¦ Ç®ÀÌ¸¦ ¸¹ÀÌ ÇÒ ¼ö·Ï ÀÍ¼÷ÇØÁ®¼­ ¹®Á¦ Ç®ÀÌ ¼Ò¿ä½Ã°£ÀÌ ÁÙ¾îµë
- * 2. Character.isDigit() ´Â ¹®ÀÚÅ¸ÀÔÀÇ µ¥ÀÌÅÍ°¡ ¼ıÀÚÀÎÁö È®ÀÎÇÏ´Â ¸Ş¼Òµå¸¦ È°¿ë ÇÒ ¼ö ÀÖÀ½   
+ *
+ * ë¡œì§
+ * 1. ë¬¸ìì™€ ìˆ«ìê°€ ì„ì¸ ë¬¸ìì—´ ì…ë ¥
+ * 2. String.replaceAll()ê³¼ ì •ê·œì‹ìœ¼ë¡œ ìˆ«ìë¥¼ ì¶”ì¶œí•˜ì—¬ ì¶œë ¥ ë³€ìˆ˜ì— ì €ì¥
+ *
+ * [ì¤‘ìš”] ë°°ìš´ì 
+ * 1. ë¬¸ì œ í’€ì´ë¥¼ ë§ì´ í•  ìˆ˜ë¡ ìµìˆ™í•´ì ¸ì„œ ë¬¸ì œ í’€ì´ ì†Œìš”ì‹œê°„ì´ ì¤„ì–´ë“¬
+ * 2. Character.isDigit() ëŠ” ë¬¸ìíƒ€ì…ì˜ ë°ì´í„°ê°€ ìˆ«ìì¸ì§€ í™•ì¸í•˜ëŠ” ë©”ì†Œë“œë¥¼ í™œìš© í•  ìˆ˜ ìˆìŒ
  *
  */
 public class No1_9_ExtractNumber {
 
-	
-	// °­ÀÇ Ç®ÀÌ
+
+	// ê°•ì˜ í’€ì´
 	public static void main(String[] args) {
-		
+
 		String result = "";
 		int resultInt = 0;
-		
+
 		Scanner scan = new Scanner(System.in);
 		String input = scan.next();
-		
+
 		for(char ch:input.toCharArray()) {
 			if(Character.isDigit(ch)) {
 				result += ch;
 			}
 		}
 		resultInt = Integer.parseInt(result);
-		
+
 		System.out.println(resultInt);
-		
+
 	}
-	
-	
+
+
 	///////////////////////////////////////////////////////////
-	
-	
-	// ¼Ò¿ä½Ã°£ 15ºĞ 
+
+
+	// ì†Œìš”ì‹œê°„ 15ë¶„
 	public static void main_pkh(String[] args) {
 
 		Scanner in = new Scanner(System.in);
 		String input = in.nextLine();
-		
+
 		No1_9_ExtractNumber extractNumber = new No1_9_ExtractNumber();
-		
+
 		System.out.println(extractNumber.solution_pkh(input));
-		
+
 	}
-	
+
 	public int solution_pkh(String input) {
-		
+
 		String result = "";
 		int resultInt = 0;
-		
+
 		String regEx = "[^0-9]";
-		
+
 		result = input.replaceAll(regEx, "");
 		resultInt = Integer.parseInt(result);
-		
+
 		return resultInt;
-		
+
 	}
-	
+
 
 }

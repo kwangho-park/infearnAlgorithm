@@ -3,63 +3,63 @@ package section1_string;
 import java.util.Scanner;
 
 /**
- * ¼³¸í
- * ¾ËÆÄºª ´ë¹®ÀÚ·Î ÀÌ·ç¾îÁø ¹®ÀÚ¿­À» ÀÔ·Â¹Ş¾Æ °°Àº ¹®ÀÚ°¡ ¿¬¼ÓÀ¸·Î ¹İº¹µÇ´Â °æ¿ì ¹İº¹µÇ´Â
- * ¹®ÀÚ ¹Ù·Î ¿À¸¥ÂÊ¿¡ ¹İº¹ È½¼ö¸¦ Ç¥±âÇÏ´Â ¹æ¹ıÀ¸·Î ¹®ÀÚ¿­À» ¾ĞÃàÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
- * ´Ü ¹İº¹È½¼ö°¡ 1ÀÎ °æ¿ì »ı·«ÇÕ´Ï´Ù.
- * 
- * ÀÔ·Â
- * Ã¹ ÁÙ¿¡ ¹®ÀÚ¿­ÀÌ ÁÖ¾îÁø´Ù. ¹®ÀÚ¿­ÀÇ ±æÀÌ´Â 100À» ³ÑÁö ¾Ê´Â´Ù.
- * 
- * 
- * Ãâ·Â
- * Ã¹ ÁÙ¿¡ ¾ĞÃàµÈ ¹®ÀÚ¿­À» Ãâ·ÂÇÑ´Ù.
- * 
- * ¿¹½Ã ÀÔ·Â 1 : KKHSSSSSSSE -> K2HS7E
- * ¿¹½Ã ÀÔ·Â 2 : KSTTTSEEKFKKKDJJGG -> KST3SE2KFK3DJ2G2
+ * ì„¤ëª…
+ * ì•ŒíŒŒë²³ ëŒ€ë¬¸ìë¡œ ì´ë£¨ì–´ì§„ ë¬¸ìì—´ì„ ì…ë ¥ë°›ì•„ ê°™ì€ ë¬¸ìê°€ ì—°ì†ìœ¼ë¡œ ë°˜ë³µë˜ëŠ” ê²½ìš° ë°˜ë³µë˜ëŠ”
+ * ë¬¸ì ë°”ë¡œ ì˜¤ë¥¸ìª½ì— ë°˜ë³µ íšŸìˆ˜ë¥¼ í‘œê¸°í•˜ëŠ” ë°©ë²•ìœ¼ë¡œ ë¬¸ìì—´ì„ ì••ì¶•í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤.
+ * ë‹¨ ë°˜ë³µíšŸìˆ˜ê°€ 1ì¸ ê²½ìš° ìƒëµí•©ë‹ˆë‹¤.
  *
- * ·ÎÁ÷ 
- * 1. ÀÔ·Â¹ŞÀº ¹®ÀÚ¿­À» ¼ø¼­´ë·Î ¹İº¹ (max ¹®ÀÚ¿­ ±æÀÌÀÇ -1) 
- * 2. ºÙ¾îÀÖ´Â 2°³ ÀÎµ¦½ºÀÇ ¿ä¼Ò¸¦ String.charAt ·Î ²¨³»¾î µ¿ÀÏ¿©ºÎ¸¦ ºñ±³
- * 3. µ¿ÀÏÇÑ°æ¿ì counter °ªÀ» Áõ°¡ ½ÃÅ°°í, µ¿ÀÏÇÏÁö ¾Ê´Â °æ¿ì °á°ú ¹®ÀÚ¿­¿¡ ÇØ´ç ¹®ÀÚ¸¦ Ãß°¡
- * 
+ * ì…ë ¥
+ * ì²« ì¤„ì— ë¬¸ìì—´ì´ ì£¼ì–´ì§„ë‹¤. ë¬¸ìì—´ì˜ ê¸¸ì´ëŠ” 100ì„ ë„˜ì§€ ì•ŠëŠ”ë‹¤.
+ *
+ *
+ * ì¶œë ¥
+ * ì²« ì¤„ì— ì••ì¶•ëœ ë¬¸ìì—´ì„ ì¶œë ¥í•œë‹¤.
+ *
+ * ì˜ˆì‹œ ì…ë ¥ 1 : KKHSSSSSSSE -> K2HS7E
+ * ì˜ˆì‹œ ì…ë ¥ 2 : KSTTTSEEKFKKKDJJGG -> KST3SE2KFK3DJ2G2
+ *
+ * ë¡œì§
+ * 1. ì…ë ¥ë°›ì€ ë¬¸ìì—´ì„ ìˆœì„œëŒ€ë¡œ ë°˜ë³µ (max ë¬¸ìì—´ ê¸¸ì´ì˜ -1)
+ * 2. ë¶™ì–´ìˆëŠ” 2ê°œ ì¸ë±ìŠ¤ì˜ ìš”ì†Œë¥¼ String.charAt ë¡œ êº¼ë‚´ì–´ ë™ì¼ì—¬ë¶€ë¥¼ ë¹„êµ
+ * 3. ë™ì¼í•œê²½ìš° counter ê°’ì„ ì¦ê°€ ì‹œí‚¤ê³ , ë™ì¼í•˜ì§€ ì•ŠëŠ” ê²½ìš° ê²°ê³¼ ë¬¸ìì—´ì— í•´ë‹¹ ë¬¸ìë¥¼ ì¶”ê°€
+ *
  * @author kwang
  *
  */
 public class No1_11_CompressionString {
 
-	// Á¤´ä, °­ÀÇ È®ÀÎ ¿¹Á¤
-	// 2½Ã°£ ¼Ò¿ä (¼³°è/ÄÚµù) 
+	// ì •ë‹µ, ê°•ì˜ í™•ì¸ ì˜ˆì •
+	// 2ì‹œê°„ ì†Œìš” (ì„¤ê³„/ì½”ë”©)
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		String input = in.nextLine();
-		
+
 		No1_11_CompressionString CompressionString = new No1_11_CompressionString();
-		
+
 		System.out.println(CompressionString.solution(input));
 	}
 
-	
+
 	public String solution(String input) {
-		
+
 		String result = "";
 		char char1 = ' ';
 		char char2 = ' ';
 		int counter = 1;
-		
+
 		String regex = "[0-1]";
-		
+
 		for(int loop=0;loop<input.length();loop++) {
-			
+
 			char1 = input.charAt(loop);
-			
+
 			if(loop+1 == input.length()) {
 				result += ""+input.charAt(loop)+counter;
 				break;
 			}else {
-				char2 = input.charAt(loop+1);				
+				char2 = input.charAt(loop+1);
 			}
-			
+
 			if(char1 == char2) {
 				counter++;
 			}else {
@@ -68,13 +68,13 @@ public class No1_11_CompressionString {
 			}
 			char1 = ' ';
 			char2 = ' ';
-			
+
 		}
-		
+
 		String answer = result.replaceAll(regex, "");
-		
-		
+
+
 		return answer;
 	}
-	
+
 }

@@ -4,76 +4,76 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * 
- * ¼³¸í
- * ÇÑ °³ÀÇ ¹®ÀÚ¿­ s¿Í ¹®ÀÚ t°¡ ÁÖ¾îÁö¸é ¹®ÀÚ¿­ sÀÇ °¢ ¹®ÀÚ°¡ ¹®ÀÚ t¿Í ¶³¾îÁø ÃÖ¼Ò°Å¸®¸¦ Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
- * 
- * ÀÔ·Â
- * Ã¹ ¹øÂ° ÁÙ¿¡ ¹®ÀÚ¿­ s¿Í ¹®ÀÚ t°¡ ÁÖ¾îÁø´Ù. ¹®ÀÚ¿­°ú ¹®ÀÚ´Â ¼Ò¹®ÀÚ·Î¸¸ ÁÖ¾îÁı´Ï´Ù.
- * ¹®ÀÚ¿­ÀÇ ±æÀÌ´Â 100À» ³ÑÁö ¾Ê´Â´Ù.
- * 
- * Ãâ·Â
- * Ã¹ ¹øÂ° ÁÙ¿¡ °¢ ¹®ÀÚ¿­ sÀÇ °¢¹®ÀÚ°¡ ¹®ÀÚ t¿Í ¶³¾îÁø °Å¸®¸¦ ¼ø¼­´ë·Î Ãâ·ÂÇÑ´Ù 
- * 
- * ¿¹½Ã 
- * teachermode e -> 1 0 1 2 1 0 1 2 2 1 0   (¹®ÀÚ 11°³)
- * 
+ *
+ * ì„¤ëª…
+ * í•œ ê°œì˜ ë¬¸ìì—´ sì™€ ë¬¸ì tê°€ ì£¼ì–´ì§€ë©´ ë¬¸ìì—´ sì˜ ê° ë¬¸ìê°€ ë¬¸ì tì™€ ë–¨ì–´ì§„ ìµœì†Œê±°ë¦¬ë¥¼ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”.
+ *
+ * ì…ë ¥
+ * ì²« ë²ˆì§¸ ì¤„ì— ë¬¸ìì—´ sì™€ ë¬¸ì tê°€ ì£¼ì–´ì§„ë‹¤. ë¬¸ìì—´ê³¼ ë¬¸ìëŠ” ì†Œë¬¸ìë¡œë§Œ ì£¼ì–´ì§‘ë‹ˆë‹¤.
+ * ë¬¸ìì—´ì˜ ê¸¸ì´ëŠ” 100ì„ ë„˜ì§€ ì•ŠëŠ”ë‹¤.
+ *
+ * ì¶œë ¥
+ * ì²« ë²ˆì§¸ ì¤„ì— ê° ë¬¸ìì—´ sì˜ ê°ë¬¸ìê°€ ë¬¸ì tì™€ ë–¨ì–´ì§„ ê±°ë¦¬ë¥¼ ìˆœì„œëŒ€ë¡œ ì¶œë ¥í•œë‹¤
+ *
+ * ì˜ˆì‹œ
+ * teachermode e -> 1 0 1 2 1 0 1 2 2 1 0   (ë¬¸ì 11ê°œ)
+ *
  * @author kwang
  *
  */
 public class No1_10_CharDistance {
 
-	
-	
+
+
 	///////////////////////////////////////////////////////
-	
-	
-	// Ç®Áö¸øÇÔ
-	// 1½Ã°£ 30ºĞÀÌ»ó ¼Ò¿ä
-	// °­ÀÇ¸¦ µé¾úÀ¸´Ï Àç ½Ãµµ ÇØº¸ÀÚ...
+
+
+	// í’€ì§€ëª»í•¨
+	// 1ì‹œê°„ 30ë¶„ì´ìƒ ì†Œìš”
+	// ê°•ì˜ë¥¼ ë“¤ì—ˆìœ¼ë‹ˆ ì¬ ì‹œë„ í•´ë³´ì...
 	public static void main(String[] args) {
 
 		Scanner in = new Scanner(System.in);
 		String input = in.next();
 		String target = in.next();
-		
-		
+
+
 		No1_10_CharDistance charDistance = new No1_10_CharDistance();
-		
+
 		System.out.println(charDistance.solution(input, target));
 	}
-	
-	// ³»Ç®ÀÌ 
+
+	// ë‚´í’€ì´
 	public String solution(String input, String target) {
 		String result="";
- 
+
 		ArrayList<Integer> targetIndex = new ArrayList<Integer>();
-		
-		// target ¹®ÀÚ¿­ °¹¼ö Å½»ö 
+
+		// target ë¬¸ìì—´ ê°¯ìˆ˜ íƒìƒ‰
 		int findIndex = input.indexOf(target);
 		targetIndex.add(0,findIndex);
-		
+
 		int loop=1;
 
-		
+
 		while(findIndex >= -1) {
 			findIndex = input.indexOf(target, findIndex+1);
-			if(findIndex==-1) break;						// target°¡ Á¸ÀçÇÏÁö¾ÊÀ¸¸é ¹İº¹¹® Á¾·á 
-			
+			if(findIndex==-1) break;						// targetê°€ ì¡´ì¬í•˜ì§€ì•Šìœ¼ë©´ ë°˜ë³µë¬¸ ì¢…ë£Œ
+
 			targetIndex.add(loop, findIndex);
 			loop++;
-		
+
 		}
-	
+
 		for(int loop2=0;loop2<input.length();loop2++) {
-			
+
 			for(int loop3=0;loop3<targetIndex.size();loop3++) {
 				// ....
 			}
 		}
-		
-		
-		
+
+
+
 		return result;
 	}
 }

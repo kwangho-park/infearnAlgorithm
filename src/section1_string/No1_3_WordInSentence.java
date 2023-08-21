@@ -3,33 +3,33 @@ package section1_string;
 import java.util.Scanner;
 
 /**
- * ¹®Àå ¼Ó ´Ü¾î  <br> 
- * ÇÑ °³ÀÇ ¹®ÀåÀÌ ÁÖ¾îÁö¸é ±× ¹®Àå ¼Ó¿¡¼­ °¡Àå ±ä ´Ü¾î¸¦ Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
- * ¹®Àå¼ÓÀÇ °¢ ´Ü¾î´Â °ø¹éÀ¸·Î ±¸ºĞµË´Ï´Ù.
- * 
- * input :  Ã¹ ÁÙ¿¡ ±æÀÌ°¡ 100À» ³ÑÁö ¾Ê´Â ÇÑ°³ÀÇ¹®ÀåÀÌ ÁÖ¾îÁı´Ï´Ù. ¹®ÀåÀº ¿µ¾î ¾ËÆÄºªÀ¸·Î¸¸ ±¸¼ºµÇ¾îÀÖ½À´Ï´Ù.
- * output : Ã¹ÁÙ¿¡ °¡Àå ±ä´Ü¾î¸¦ Ãâ·ÂÇÑ´Ù. °¡Àå ±æÀÌ°¡ ±ä´Ü¾î°¡ ¿©·¯°³ÀÏ °æ¿ì ¹®Àå¼Ó¿¡¼­ °¡Àå ¾ÕÂÊ¿¡ À§Ä¡ÇÑ ´Ü¾î¸¦ ´äÀ¸·Î ÇÑ´Ù.
- * 
- * ¿¹½Ã : it is time to study -> study
- * 
+ * ë¬¸ì¥ ì† ë‹¨ì–´  <br>
+ * í•œ ê°œì˜ ë¬¸ì¥ì´ ì£¼ì–´ì§€ë©´ ê·¸ ë¬¸ì¥ ì†ì—ì„œ ê°€ì¥ ê¸´ ë‹¨ì–´ë¥¼ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”.
+ * ë¬¸ì¥ì†ì˜ ê° ë‹¨ì–´ëŠ” ê³µë°±ìœ¼ë¡œ êµ¬ë¶„ë©ë‹ˆë‹¤.
+ *
+ * input :  ì²« ì¤„ì— ê¸¸ì´ê°€ 100ì„ ë„˜ì§€ ì•ŠëŠ” í•œê°œì˜ë¬¸ì¥ì´ ì£¼ì–´ì§‘ë‹ˆë‹¤. ë¬¸ì¥ì€ ì˜ì–´ ì•ŒíŒŒë²³ìœ¼ë¡œë§Œ êµ¬ì„±ë˜ì–´ìˆìŠµë‹ˆë‹¤.
+ * output : ì²«ì¤„ì— ê°€ì¥ ê¸´ë‹¨ì–´ë¥¼ ì¶œë ¥í•œë‹¤. ê°€ì¥ ê¸¸ì´ê°€ ê¸´ë‹¨ì–´ê°€ ì—¬ëŸ¬ê°œì¼ ê²½ìš° ë¬¸ì¥ì†ì—ì„œ ê°€ì¥ ì•ìª½ì— ìœ„ì¹˜í•œ ë‹¨ì–´ë¥¼ ë‹µìœ¼ë¡œ í•œë‹¤.
+ *
+ * ì˜ˆì‹œ : it is time to study -> study
+ *
  * @author kwang
  *
  */
 public class No1_3_WordInSentence {
 
-	
-	// °­ÀÇ Ç®ÀÌ 1
+
+	// ê°•ì˜ í’€ì´ 1
 	public static void main(String args[]) {
-		
+
 		String answer = "";
-		
+
 		Scanner in = new Scanner(System.in);
 		String str = in.nextLine();
-		
-		
-		int m = Integer.MIN_VALUE;		// Integer °¡ °¡Áø ÃÖ¼Ò°ªÀ¸·Î ÃÊ±âÈ­ 
+
+
+		int m = Integer.MIN_VALUE;		// Integer ê°€ ê°€ì§„ ìµœì†Œê°’ìœ¼ë¡œ ì´ˆê¸°í™”
 		String[] s = str.split(" ");
-		
+
 		for(String x : s) {
 			int len=x.length();
 			if(len>m) {
@@ -37,35 +37,35 @@ public class No1_3_WordInSentence {
 				answer=x;
 			}
 		}
-		
+
 		System.out.print(answer);
-		
+
 	}
-	
-	// Á¤´ä : 35ºĞ¼Ò¿ä (·ÎÁ÷¼³°è,ÄÚµù,Å×½ºÆ®) 
-	// °­ÀÇ ¼ö°­ ¿¹Á¤
+
+	// ì •ë‹µ : 35ë¶„ì†Œìš” (ë¡œì§ì„¤ê³„,ì½”ë”©,í…ŒìŠ¤íŠ¸)
+	// ê°•ì˜ ìˆ˜ê°• ì˜ˆì •
 	public static void main_pkh(String args[]) {
-		
+
 		Scanner in = new Scanner(System.in);
-		
+
 		String inputStr = in.nextLine();
-		
+
 		String[] inputArr = inputStr.split(" ");
-		
-		
-		String result = inputArr[0];			// Ã¹¹øÂ° ´ë»óÀº ºñ±³±ºÀ¸·Î ÀúÀåÇÔ
-		
+
+
+		String result = inputArr[0];			// ì²«ë²ˆì§¸ ëŒ€ìƒì€ ë¹„êµêµ°ìœ¼ë¡œ ì €ì¥í•¨
+
 		for(String str : inputArr) {
 			if(result.length() < str.length()) {
 				result = str;
 			}
 		}
-		
-		
+
+
 		System.out.println(result);
-		
+
 	}
-	
-	
-	
+
+
+
 }

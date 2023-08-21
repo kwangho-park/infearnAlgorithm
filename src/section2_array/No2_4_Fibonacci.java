@@ -4,38 +4,38 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
-* 4. ÇÇº¸³ªÄ¡ ¼ö¿­
-* 
-* 
-* ¼³¸í
-* 1) ÇÇº¸³ªÅ° ¼ö¿­À» Ãâ·ÂÇÑ´Ù. ÇÇº¸³ªÄ¡ ¼ö¿­ÀÌ¶õ ¾ÕÀÇ 2°³ÀÇ ¼ö¸¦ ÇÕÇÏ¿© ´ÙÀ½ ¼ıÀÚ°¡ µÇ´Â ¼ö¿­ÀÌ´Ù.
-* 2) ÀÔ·ÂÀº ÇÇº¸³ªÄ¡ ¼ö¿­ÀÇ ÃÑ Ç×ÀÇ ¼ö ÀÌ´Ù. ¸¸¾à 7ÀÌ ÀÔ·ÂµÇ¸é 1 1 2 3 5 8 13À» Ãâ·ÂÇÏ¸é µÈ´Ù.
-* 
-* 
-* ÀÔ·Â
-* Ã¹ ÁÙ¿¡ ÃÑ Ç×¼ö N(3<=N<=45)ÀÌ ÀÔ·ÂµÈ´Ù.
-* 
-* 
-* Ãâ·Â
-* Ã¹ ÁÙ¿¡ ÇÇº¸³ªÄ¡ ¼ö¿­À» Ãâ·ÂÇÕ´Ï´Ù.
-* 
-* 
-* ¿¹½Ã ÀÔ·Â
-* 10
-* 
-* ¿¹½Ã Ãâ·Â
-* 1 1 2 3 5 8 13 21 34 55
-* 
-* ·ÎÁ÷
-* 1. ArrayList¸¦ Á¤ÀÇÇÏ°í , 0~1¹øÂ°¿ä¼Ò¿¡ 1À» ÀúÀå 
-* 2. ÀÔ·Â¹ŞÀº Á¤¼ö-2¸¸Å­ ¹İº¹¹® ½ÇÇà 
-* 3. ¾Õ°ú µÚ¸¦ ÇÕÇÑ °ªÀ» arrayList ¿ä¼Ò¿¡ ÀúÀå
-* 4. arraylist ¿¡ ÀúÀåµÈ ¿ä¼Ò¸¦ Ãâ·Â 
-* 
-*/
+ * 4. í”¼ë³´ë‚˜ì¹˜ ìˆ˜ì—´
+ *
+ *
+ * ì„¤ëª…
+ * 1) í”¼ë³´ë‚˜í‚¤ ìˆ˜ì—´ì„ ì¶œë ¥í•œë‹¤. í”¼ë³´ë‚˜ì¹˜ ìˆ˜ì—´ì´ë€ ì•ì˜ 2ê°œì˜ ìˆ˜ë¥¼ í•©í•˜ì—¬ ë‹¤ìŒ ìˆ«ìê°€ ë˜ëŠ” ìˆ˜ì—´ì´ë‹¤.
+ * 2) ì…ë ¥ì€ í”¼ë³´ë‚˜ì¹˜ ìˆ˜ì—´ì˜ ì´ í•­ì˜ ìˆ˜ ì´ë‹¤. ë§Œì•½ 7ì´ ì…ë ¥ë˜ë©´ 1 1 2 3 5 8 13ì„ ì¶œë ¥í•˜ë©´ ëœë‹¤.
+ *
+ *
+ * ì…ë ¥
+ * ì²« ì¤„ì— ì´ í•­ìˆ˜ N(3<=N<=45)ì´ ì…ë ¥ëœë‹¤.
+ *
+ *
+ * ì¶œë ¥
+ * ì²« ì¤„ì— í”¼ë³´ë‚˜ì¹˜ ìˆ˜ì—´ì„ ì¶œë ¥í•©ë‹ˆë‹¤.
+ *
+ *
+ * ì˜ˆì‹œ ì…ë ¥
+ * 10
+ *
+ * ì˜ˆì‹œ ì¶œë ¥
+ * 1 1 2 3 5 8 13 21 34 55
+ *
+ * ë¡œì§
+ * 1. ArrayListë¥¼ ì •ì˜í•˜ê³  , 0~1ë²ˆì§¸ìš”ì†Œì— 1ì„ ì €ì¥
+ * 2. ì…ë ¥ë°›ì€ ì •ìˆ˜-2ë§Œí¼ ë°˜ë³µë¬¸ ì‹¤í–‰
+ * 3. ì•ê³¼ ë’¤ë¥¼ í•©í•œ ê°’ì„ arrayList ìš”ì†Œì— ì €ì¥
+ * 4. arraylist ì— ì €ì¥ëœ ìš”ì†Œë¥¼ ì¶œë ¥
+ *
+ */
 public class No2_4_Fibonacci {
 
-	
+
 	public int[] solution(int n) {
 		int[] answer=new int[n];
 		answer[0]=1;
@@ -45,37 +45,37 @@ public class No2_4_Fibonacci {
 		}
 		return answer;
 	}
-	
-	// °­ÀÇ Ç®ÀÌ 
+
+	// ê°•ì˜ í’€ì´
 	public static void main(String[] args) {
-		
+
 		No2_4_Fibonacci Fibonacci = new No2_4_Fibonacci();
 		Scanner kb = new Scanner(System.in);
 		int n=kb.nextInt();
 		for(int x : Fibonacci.solution(n)) System.out.print(x+" ");
-		
+
 	}
-	
-	// Á¤´ä (10~20ºĞ ¼Ò¿ä) 
+
+	// ì •ë‹µ (10~20ë¶„ ì†Œìš”)
 	public static void main_pkh(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int n = scan.nextInt();
-		
+
 		ArrayList<Integer> arr = new ArrayList<Integer>();
-		
+
 		arr.add(1);
 		arr.add(1);
-		
-		
+
+
 		for(int loop=0;loop<n-2;loop++) {
 			int num = arr.get(loop) + arr.get(loop+1);
 			arr.add(num);
 		}
- 
+
 		for(int num:arr) {
 			System.out.print(num+" ");
 		}
-		
+
 	}
 
 }

@@ -7,71 +7,71 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 /**
- * 3. ¸ÅÃâ¾×ÀÇ Á¾·ù (hash, sliding window)
- * ¼³¸í
+ * 3. ë§¤ì¶œì•¡ì˜ ì¢…ë¥˜ (hash, sliding window)
+ * ì„¤ëª…
  *
- * Çö¼öÀÇ ¾Æºü´Â Á¦°úÁ¡À» ¿î¿µÇÕ´Ï´Ù. Çö¼ö¾Æºü´Â Çö¼ö¿¡°Ô NÀÏ µ¿¾ÈÀÇ ¸ÅÃâ±â·ÏÀ» ÁÖ°í ¿¬¼ÓµÈ KÀÏ µ¿¾ÈÀÇ ¸ÅÃâ¾×ÀÇ Á¾·ù¸¦
- * °¢ ±¸°£º°·Î ±¸ÇÏ¶ó°í Çß½À´Ï´Ù.
- * ¸¸¾à N=7ÀÌ°í 7ÀÏ °£ÀÇ ¸ÅÃâ±â·ÏÀÌ ¾Æ·¡¿Í °°°í, ÀÌ¶§ K=4ÀÌ¸é
+ * í˜„ìˆ˜ì˜ ì•„ë¹ ëŠ” ì œê³¼ì ì„ ìš´ì˜í•©ë‹ˆë‹¤. í˜„ìˆ˜ì•„ë¹ ëŠ” í˜„ìˆ˜ì—ê²Œ Nì¼ ë™ì•ˆì˜ ë§¤ì¶œê¸°ë¡ì„ ì£¼ê³  ì—°ì†ëœ Kì¼ ë™ì•ˆì˜ ë§¤ì¶œì•¡ì˜ ì¢…ë¥˜ë¥¼
+ * ê° êµ¬ê°„ë³„ë¡œ êµ¬í•˜ë¼ê³  í–ˆìŠµë‹ˆë‹¤.
+ * ë§Œì•½ N=7ì´ê³  7ì¼ ê°„ì˜ ë§¤ì¶œê¸°ë¡ì´ ì•„ëž˜ì™€ ê°™ê³ , ì´ë•Œ K=4ì´ë©´
  * 20 12 20 10 23 17 10
  *
- * ¸ÅÃâÁ¾·ù : ¿¬¼ÓµÈ KÀÏ µ¿¾ÈÀÇ ¸ÅÃâÁ¾·ù (Áï, Áßº¹Á¦°Å)
+ * ë§¤ì¶œì¢…ë¥˜ : ì—°ì†ëœ Kì¼ ë™ì•ˆì˜ ë§¤ì¶œì¢…ë¥˜ (ì¦‰, ì¤‘ë³µì œê±°)
  *
- * °¢ ¿¬¼Ó 4ÀÏ°£ÀÇ ±¸°£ÀÇ ¸ÅÃâÁ¾·ù´Â
- * Ã¹ ¹øÂ° ±¸°£Àº [20, 12, 20, 10]´Â ¸ÅÃâ¾×ÀÇ Á¾·ù°¡ 20, 12, 10À¸·Î 3ÀÌ´Ù.
- * µÎ ¹øÂ° ±¸°£Àº [12, 20, 10, 23]´Â ¸ÅÃâ¾×ÀÇ Á¾·ù°¡ 4ÀÌ´Ù.
- * ¼¼ ¹øÂ° ±¸°£Àº [20, 10, 23, 17]´Â ¸ÅÃâ¾×ÀÇ Á¾·ù°¡ 4ÀÌ´Ù.
- * ³× ¹øÂ° ±¸°£Àº [10, 23, 17, 10]´Â ¸ÅÃâ¾×ÀÇ Á¾·ù°¡ 3ÀÌ´Ù.
+ * ê° ì—°ì† 4ì¼ê°„ì˜ êµ¬ê°„ì˜ ë§¤ì¶œì¢…ë¥˜ëŠ”
+ * ì²« ë²ˆì§¸ êµ¬ê°„ì€ [20, 12, 20, 10]ëŠ” ë§¤ì¶œì•¡ì˜ ì¢…ë¥˜ê°€ 20, 12, 10ìœ¼ë¡œ 3ì´ë‹¤.
+ * ë‘ ë²ˆì§¸ êµ¬ê°„ì€ [12, 20, 10, 23]ëŠ” ë§¤ì¶œì•¡ì˜ ì¢…ë¥˜ê°€ 4ì´ë‹¤.
+ * ì„¸ ë²ˆì§¸ êµ¬ê°„ì€ [20, 10, 23, 17]ëŠ” ë§¤ì¶œì•¡ì˜ ì¢…ë¥˜ê°€ 4ì´ë‹¤.
+ * ë„¤ ë²ˆì§¸ êµ¬ê°„ì€ [10, 23, 17, 10]ëŠ” ë§¤ì¶œì•¡ì˜ ì¢…ë¥˜ê°€ 3ì´ë‹¤.
  *
- * NÀÏ°£ÀÇ ¸ÅÃâ±â·Ï°ú ¿¬¼Ó±¸°£ÀÇ ±æÀÌ K°¡ ÁÖ¾îÁö¸é Ã¹ ¹øÂ° ±¸°£ºÎÅÍ °¢ ±¸°£º°
- * ¸ÅÃâ¾×ÀÇ Á¾·ù¸¦ Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
- *
- *
- * ÀÔ·Â
- * Ã¹ ÁÙ¿¡ ÀÏÀÚ ±¸°£ N(5<=N<=100,000)°ú ¸ÅÃâ¾× »êÁ¤ ±â°£ K(2<=K<=N)°¡ ÁÖ¾îÁý´Ï´Ù.
- * µÎ ¹øÂ° ÁÙ¿¡ N°³ÀÇ ¼ýÀÚ¿­ÀÌ ÁÖ¾îÁý´Ï´Ù. °¢ ¼ýÀÚ´Â 500ÀÌÇÏÀÇ À½ÀÌ ¾Æ´Ñ Á¤¼öÀÔ´Ï´Ù.
+ * Nì¼ê°„ì˜ ë§¤ì¶œê¸°ë¡ê³¼ ì—°ì†êµ¬ê°„ì˜ ê¸¸ì´ Kê°€ ì£¼ì–´ì§€ë©´ ì²« ë²ˆì§¸ êµ¬ê°„ë¶€í„° ê° êµ¬ê°„ë³„
+ * ë§¤ì¶œì•¡ì˜ ì¢…ë¥˜ë¥¼ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ëž¨ì„ ìž‘ì„±í•˜ì„¸ìš”.
  *
  *
- * Ãâ·Â
- * Ã¹ ÁÙ¿¡ °¢ ±¸°£ÀÇ ¸ÅÃâ¾× Á¾·ù¸¦ ¼ø¼­´ë·Î Ãâ·ÂÇÕ´Ï´Ù.
+ * ìž…ë ¥
+ * ì²« ì¤„ì— ì¼ìž êµ¬ê°„ N(5<=N<=100,000)ê³¼ ë§¤ì¶œì•¡ ì‚°ì • ê¸°ê°„ K(2<=K<=N)ê°€ ì£¼ì–´ì§‘ë‹ˆë‹¤.
+ * ë‘ ë²ˆì§¸ ì¤„ì— Nê°œì˜ ìˆ«ìžì—´ì´ ì£¼ì–´ì§‘ë‹ˆë‹¤. ê° ìˆ«ìžëŠ” 500ì´í•˜ì˜ ìŒì´ ì•„ë‹Œ ì •ìˆ˜ìž…ë‹ˆë‹¤.
  *
  *
- * ¿¹½Ã ÀÔ·Â 1
+ * ì¶œë ¥
+ * ì²« ì¤„ì— ê° êµ¬ê°„ì˜ ë§¤ì¶œì•¡ ì¢…ë¥˜ë¥¼ ìˆœì„œëŒ€ë¡œ ì¶œë ¥í•©ë‹ˆë‹¤.
+ *
+ *
+ * ì˜ˆì‹œ ìž…ë ¥ 1
  * 7 4
  * 20 12 20 10 23 17 10
  *
- * ¿¹½Ã Ãâ·Â 1
+ * ì˜ˆì‹œ ì¶œë ¥ 1
  * 3 4 4 3
  *
- * [·ÎÁ÷]
+ * [ë¡œì§]
  *
  */
 public class No4_3_TypeOfSales {
 
-    // º¹½À¿¹Á¤
+    // ë³µìŠµì˜ˆì •
     public ArrayList<Integer> solution(int n, int k, int[] arr){
         ArrayList<Integer> answer = new ArrayList<>();
         HashMap<Integer, Integer> HM = new HashMap<>();
 
-        // KÀÏ µ¿¾ÈÀÇ ¸ÅÃâ¾× ÃÊ±â°ª ¼³Á¤
-        // ex 7ÀÏ°£ ¸ÅÃâ±â·Ï(arr)¿¡¼­ 1~4ÀÏ±îÁöÀÇ ¸ÅÃâ¾× Á¾·ù¸¦ HashMap (HM)¿¡ ¼ÂÆÃÇÔ
+        // Kì¼ ë™ì•ˆì˜ ë§¤ì¶œì•¡ ì´ˆê¸°ê°’ ì„¤ì •
+        // ex 7ì¼ê°„ ë§¤ì¶œê¸°ë¡(arr)ì—ì„œ 1~4ì¼ê¹Œì§€ì˜ ë§¤ì¶œì•¡ ì¢…ë¥˜ë¥¼ HashMap (HM)ì— ì…‹íŒ…í•¨
         for(int i=0; i<k-1; i++){
             HM.put(arr[i], HM.getOrDefault(arr[i], 0)+1);
         }
         int lt=0;       // left pointer (two pointer algorithm)
 
         // sliding window
-        for(int rt=k-1; rt<n; rt++){            // rt Áõ°¡ (right pointer)
+        for(int rt=k-1; rt<n; rt++){            // rt ì¦ê°€ (right pointer)
 
-            HM.put(arr[rt], HM.getOrDefault(arr[rt], 0)+1); // ¸ÅÃâ¾× Á¾·ù¸¦ Ä«¿îÆÃÇÏ¿© HM¿¡ ÀúÀå)
-            answer.add(HM.size());              // ¸ÅÃâ¾× Á¾·ù ÀúÀå
+            HM.put(arr[rt], HM.getOrDefault(arr[rt], 0)+1); // ë§¤ì¶œì•¡ ì¢…ë¥˜ë¥¼ ì¹´ìš´íŒ…í•˜ì—¬ HMì— ì €ìž¥)
+            answer.add(HM.size());              // ë§¤ì¶œì•¡ ì¢…ë¥˜ ì €ìž¥
 
             HM.put(arr[lt], HM.get(arr[lt])-1);
 
-            if(HM.get(arr[lt])==0) {            // ¿¬¼ÓµÈ KÀÏ µ¿¾È ¸ÅÃâ¾×(key)ÀÌ ¾ø´Â °æ¿ì(value = 0ÀÎ) hashMap ¿¡¼­ Á¦°Å
+            if(HM.get(arr[lt])==0) {            // ì—°ì†ëœ Kì¼ ë™ì•ˆ ë§¤ì¶œì•¡(key)ì´ ì—†ëŠ” ê²½ìš°(value = 0ì¸) hashMap ì—ì„œ ì œê±°
                 HM.remove(arr[lt]);
             }
-            lt++;       // left pointer Áõ°¡
+            lt++;       // left pointer ì¦ê°€
         }
         return answer;
     }

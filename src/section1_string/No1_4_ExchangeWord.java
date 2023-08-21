@@ -4,84 +4,84 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * N°³ÀÇ ´Ü¾î°¡ ÁÖ¾îÁö¸é °¢ ´Ü¾î¸¦ µÚÁı¾î Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
- * 
- * ÀÔ·Â
- * Ã¹ ÁÙ¿¡ ÀÚ¿¬¼ö N(3<=N<=20)ÀÌ ÁÖ¾îÁı´Ï´Ù.
- * µÎ ¹øÂ° ÁÙºÎÅÍ N°³ÀÇ ´Ü¾î°¡ °¢ ÁÙ¿¡ ÇÏ³ª¾¿ ÁÖ¾îÁı´Ï´Ù. ´Ü¾î´Â ¿µ¾î ¾ËÆÄºªÀ¸·Î¸¸ ±¸¼ºµÇ¾î ÀÖ½À´Ï´Ù.
- * 
- * Ãâ·Â : N°³ÀÇ ´Ü¾î¸¦ ÀÔ·ÂµÈ ¼ø¼­´ë·Î ÇÑ ÁÙ¿¡ ÇÏ³ª¾¿ µÚÁı¾î¼­ Ãâ·ÂÇÕ´Ï´Ù.
- *  
- * ¿¹½Ã input 
+ * Nê°œì˜ ë‹¨ì–´ê°€ ì£¼ì–´ì§€ë©´ ê° ë‹¨ì–´ë¥¼ ë’¤ì§‘ì–´ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”.
+ *
+ * ì…ë ¥
+ * ì²« ì¤„ì— ìì—°ìˆ˜ N(3<=N<=20)ì´ ì£¼ì–´ì§‘ë‹ˆë‹¤.
+ * ë‘ ë²ˆì§¸ ì¤„ë¶€í„° Nê°œì˜ ë‹¨ì–´ê°€ ê° ì¤„ì— í•˜ë‚˜ì”© ì£¼ì–´ì§‘ë‹ˆë‹¤. ë‹¨ì–´ëŠ” ì˜ì–´ ì•ŒíŒŒë²³ìœ¼ë¡œë§Œ êµ¬ì„±ë˜ì–´ ìˆìŠµë‹ˆë‹¤.
+ *
+ * ì¶œë ¥ : Nê°œì˜ ë‹¨ì–´ë¥¼ ì…ë ¥ëœ ìˆœì„œëŒ€ë¡œ í•œ ì¤„ì— í•˜ë‚˜ì”© ë’¤ì§‘ì–´ì„œ ì¶œë ¥í•©ë‹ˆë‹¤.
+ *
+ * ì˜ˆì‹œ input
  * 3
  * good
  * Time
  * Big
- * 
- * ¿¹½Ã output 
+ *
+ * ì˜ˆì‹œ output
  * doog
  * emiT
  * giB
- * 
- * [Áß¿ä] ¹è¿îÁ¡
- * 1. nextInt(), next ´Â ¶ç¾î¾²±â¿Í ÁÙ¹Ù²Ş ±âÁØÀ¸·Î ÀÔ·ÂÀ» ±¸ºĞÇÔ
- * = 1½Ã°£ ¼Ò¿ä (nextInt() ÀÇ »ç¿ë¹æ¹ıÀ» Á¤È®ÇÏ°Ô ÀÎÁöÇÏÁö¸øÇØ¼­ Å×½ºÆ® ½Ã°£ µô·¹ÀÌ°¡ ¹ß»ıÇÔ )
- * 2. StringBuilder libÁ¸Àç ¹× »ç¿ë¹ı È®ÀÎ 
- * 
- * 
- * 
- * 
+ *
+ * [ì¤‘ìš”] ë°°ìš´ì 
+ * 1. nextInt(), next ëŠ” ë„ì–´ì“°ê¸°ì™€ ì¤„ë°”ê¿ˆ ê¸°ì¤€ìœ¼ë¡œ ì…ë ¥ì„ êµ¬ë¶„í•¨
+ * = 1ì‹œê°„ ì†Œìš” (nextInt() ì˜ ì‚¬ìš©ë°©ë²•ì„ ì •í™•í•˜ê²Œ ì¸ì§€í•˜ì§€ëª»í•´ì„œ í…ŒìŠ¤íŠ¸ ì‹œê°„ ë”œë ˆì´ê°€ ë°œìƒí•¨ )
+ * 2. StringBuilder libì¡´ì¬ ë° ì‚¬ìš©ë²• í™•ì¸
+ *
+ *
+ *
+ *
  * @author kwang
  *
  */
 public class No1_4_ExchangeWord {
 
-	// °­ÀÇ Ç®ÀÌ 
+	// ê°•ì˜ í’€ì´
 	public static void main(String[] args) {
-		
+
 		No1_4_ExchangeWord ExchangeWord = new No1_4_ExchangeWord();
-		
+
 		Scanner in = new Scanner(System.in);
-		
+
 		int n = in.nextInt();
-		
+
 		String[] inputArr = new String[n];
-		
+
 		for(int loop=0;loop<inputArr.length;loop++) {
 			inputArr[loop] = in.next();
 		}
-		
+
 		for(String value:ExchangeWord.solution_2(n, inputArr)) {
 			System.out.println(value);
 		}
-		
+
 	}
-	
-	// °­ÀÇ Ç®ÀÌ 1 (StringBuilder lib È°¿ë)
+
+	// ê°•ì˜ í’€ì´ 1 (StringBuilder lib í™œìš©)
 	public ArrayList<String> solution_1(int n, String[] str){
-		
+
 		ArrayList<String> resultArr = new ArrayList<String>();
-		
-		
+
+
 		for(String value:str) {
 			StringBuilder stringBuilder = new StringBuilder(value);
 			String tmp = stringBuilder.reverse().toString();
 			resultArr.add(tmp);
 		}
-		
+
 		return resultArr;
 	}
-	 
-	
-	
-	// ¹®ÀÚ µÚÁı±â ·ÎÁ÷ÀÌ ÀÍ¼÷ÇÏÁö¾Ê¾Æ¼­ ´Ù½ÃÇÑ¹ø º¹½À ÇÊ¿äÇÒµíÇÔ 
-	// °­ÀÇ Ç®ÀÌ 2 (Á÷Á¢ µÚÁı±â) 
+
+
+
+	// ë¬¸ì ë’¤ì§‘ê¸° ë¡œì§ì´ ìµìˆ™í•˜ì§€ì•Šì•„ì„œ ë‹¤ì‹œí•œë²ˆ ë³µìŠµ í•„ìš”í• ë“¯í•¨
+	// ê°•ì˜ í’€ì´ 2 (ì§ì ‘ ë’¤ì§‘ê¸°)
 	public ArrayList<String> solution_2(int n, String[] str){
 		ArrayList<String> resultArr = new ArrayList<String>();
-		
+
 		for(String value:str) {
 			char[] charArr = value.toCharArray();
-			int left = 0;						// left 								
+			int left = 0;						// left
 			int right = value.length()-1;		// right
 
 			while(left<right) {
@@ -94,56 +94,56 @@ public class No1_4_ExchangeWord {
 			String tmp=String.valueOf(charArr);
 			resultArr.add(tmp);
 		}
-		
-		
-		return resultArr;		
+
+
+		return resultArr;
 	}
-	
-	
+
+
 	////////////////////////////////////////////////////////////////////////
-	
-	// Á¤´ä (Á÷Á¢µÚÁı±â¹æ½Ä) 
+
+	// ì •ë‹µ (ì§ì ‘ë’¤ì§‘ê¸°ë°©ì‹)
 	public static void main_pkh(String[] args) {
-		
-		
+
+
 		ArrayList<String> inputArr = new ArrayList<String>();
 		ArrayList<String> outputArr = new ArrayList<String>();
-		
-		Scanner in = new Scanner(System.in) ;	
-		
-		// input data 
+
+		Scanner in = new Scanner(System.in) ;
+
+		// input data
 		String countStr = in.nextLine();
 		int count = Integer.parseInt(countStr);
-		
+
 		for(int loop=0; loop<count; loop++) {
 			inputArr.add(in.nextLine());
 		}
-		
-		
-		// µ¥ÀÌÅÍ °¡°ø 
+
+
+		// ë°ì´í„° ê°€ê³µ
 		int dataSize = 0;
 		String data = "";
 		String afterData = "";
-		
+
 		for(int loop=0;  inputArr.size()>loop; loop++) {
-			
+
 			data = inputArr.get(loop);
 			dataSize = inputArr.get(loop).length();
-			
-			
+
+
 			for(int loop2=dataSize-1; 0<=loop2; loop2--) {
 				afterData += data.charAt(loop2);
 			}
 			outputArr.add(afterData);
-			
+
 			data ="";
 			dataSize=0;
 			afterData="";
-			
+
 
 		}
 
-		// µ¥ÀÌÅÍ Ãâ·Â 
+		// ë°ì´í„° ì¶œë ¥
 		for(String str:outputArr) {
 			System.out.println(str);
 		}

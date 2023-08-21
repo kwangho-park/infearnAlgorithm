@@ -3,46 +3,46 @@ package section1_string;
 import java.util.Scanner;
 
 /**
- * ¼³¸í
- * ¿µ¾î ¾ËÆÄºª°ú Æ¯¼ö¹®ÀÚ·Î ±¸¼ºµÈ ¹®ÀÚ¿­ÀÌ ÁÖ¾îÁö¸é ¿µ¾î ¾ËÆÄºª¸¸ µÚÁı°í (¾ËÆÄºªÀÇ Ãâ·Â ¼ø¼­°¡ ¹Ù²î¾î¾ßÇÔ ),
- * Æ¯¼ö¹®ÀÚ´Â ÀÚ±â ÀÚ¸®¿¡ ±×´ë·Î ÀÖ´Â ¹®ÀÚ¿­À» ¸¸µé¾î Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
- * 
- * ÀÔ·Â : Ã¹ ÁÙ¿¡ ±æÀÌ°¡ 100À» ³ÑÁö ¾Ê´Â ¹®ÀÚ¿­ÀÌ ÁÖ¾îÁı´Ï´Ù.
- * 
- * Ãâ·Â : Ã¹ÁÙ¿¡ ¾ËÆÄºª¸¸ µÚÁıÈù ¹®ÀÚ¿­À» Ãâ·ÂÇÕ´Ï´Ù
- * 
- * ¿¹½Ã ÀÔÃâ·Â : a#b!GE*T@S -> S#T!EG*b@a
- *  
- * [Áß¿ä] º¸¿ÏÁ¡ 
- * 1. ¹®Á¦¸¦ ´ëÃæÀĞÁö ¸»°í Á¤È®ÇÏ°Ô ÆÄ¾ÇÇÏ´Â ¿¬½ÀÀ» ÇØ¾ßÇÔ (¾ËÆÄºªÀÇ ¼ø¼­°¡ ¹Ù²î¾î¾ßÇÏ´Â°É ´ë¼Ò¹®ÀÚ·Î ¿ÀÀÎÇßÀ½...) = Áï ³Ê¹« Á¶±ŞÇÔ
- * 2. ¾ËÆÄºªÀ» È®ÀÎÇÏ´Â character method °¡ ÀÖÀ¸¸ç ÀÌ¸¦ È°¿ëÇÏ¸é Á¤±Ô½ÄÀ¸·Î Æ¯¼ö¹®ÀÚ¸¦ È®ÀÎÇÏÁö¾Ê¾ÆµµµÊ 
- *  
+ * ì„¤ëª…
+ * ì˜ì–´ ì•ŒíŒŒë²³ê³¼ íŠ¹ìˆ˜ë¬¸ìë¡œ êµ¬ì„±ëœ ë¬¸ìì—´ì´ ì£¼ì–´ì§€ë©´ ì˜ì–´ ì•ŒíŒŒë²³ë§Œ ë’¤ì§‘ê³  (ì•ŒíŒŒë²³ì˜ ì¶œë ¥ ìˆœì„œê°€ ë°”ë€Œì–´ì•¼í•¨ ),
+ * íŠ¹ìˆ˜ë¬¸ìëŠ” ìê¸° ìë¦¬ì— ê·¸ëŒ€ë¡œ ìˆëŠ” ë¬¸ìì—´ì„ ë§Œë“¤ì–´ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”.
+ *
+ * ì…ë ¥ : ì²« ì¤„ì— ê¸¸ì´ê°€ 100ì„ ë„˜ì§€ ì•ŠëŠ” ë¬¸ìì—´ì´ ì£¼ì–´ì§‘ë‹ˆë‹¤.
+ *
+ * ì¶œë ¥ : ì²«ì¤„ì— ì•ŒíŒŒë²³ë§Œ ë’¤ì§‘íŒ ë¬¸ìì—´ì„ ì¶œë ¥í•©ë‹ˆë‹¤
+ *
+ * ì˜ˆì‹œ ì…ì¶œë ¥ : a#b!GE*T@S -> S#T!EG*b@a
+ *
+ * [ì¤‘ìš”] ë³´ì™„ì 
+ * 1. ë¬¸ì œë¥¼ ëŒ€ì¶©ì½ì§€ ë§ê³  ì •í™•í•˜ê²Œ íŒŒì•…í•˜ëŠ” ì—°ìŠµì„ í•´ì•¼í•¨ (ì•ŒíŒŒë²³ì˜ ìˆœì„œê°€ ë°”ë€Œì–´ì•¼í•˜ëŠ”ê±¸ ëŒ€ì†Œë¬¸ìë¡œ ì˜¤ì¸í–ˆìŒ...) = ì¦‰ ë„ˆë¬´ ì¡°ê¸‰í•¨
+ * 2. ì•ŒíŒŒë²³ì„ í™•ì¸í•˜ëŠ” character method ê°€ ìˆìœ¼ë©° ì´ë¥¼ í™œìš©í•˜ë©´ ì •ê·œì‹ìœ¼ë¡œ íŠ¹ìˆ˜ë¬¸ìë¥¼ í™•ì¸í•˜ì§€ì•Šì•„ë„ë¨
+ *
  * @author kwang
  *
  */
 public class No1_5_ExchangeWord {
 
-	// °­ÀÇ Ç®ÀÌ 
+	// ê°•ì˜ í’€ì´
 	public static void main(String[] args) {
-		
+
 		No1_5_ExchangeWord ExchangeWord = new No1_5_ExchangeWord();
-		
+
 		Scanner in = new Scanner(System.in);
-		
+
 		String input=in.next();
-		
+
 		System.out.println(ExchangeWord.solution(input));
-		
+
 	}
-	
-	// °­ÀÇ Ç®ÀÌ 
+
+	// ê°•ì˜ í’€ì´
 	public String solution(String input) {
 		String result = "";
-		
+
 		char[] charArr = input.toCharArray();
 		int left=0;
 		int right=charArr.length-1;
-		
+
 		while(left<right) {
 			if(!Character.isAlphabetic(charArr[left])) {
 				left++;
@@ -54,48 +54,48 @@ public class No1_5_ExchangeWord {
 				charArr[right] = tmp;
 				left++;
 				right--;
-			}		
+			}
 		}
-		
+
 		result= String.valueOf(charArr);
 		return result;
 	}
-	
+
 	////////////////////////////////////////////////////////////////////
-	
-	
-	// ¾à 1½Ã°£ ¼Ò¿ä
-	// Æ²¸² (ÇÙ½ÉÀ» ³õÄ¡°íÀÖ±â ‹š¹®¿¡ °­ÀÇµè°í º¹½ÀÇÏ¿© º¸¿ÏÀÌ ÇÊ¿äÇÔ ) 
+
+
+	// ì•½ 1ì‹œê°„ ì†Œìš”
+	// í‹€ë¦¼ (í•µì‹¬ì„ ë†“ì¹˜ê³ ìˆê¸° ë–„ë¬¸ì— ê°•ì˜ë“£ê³  ë³µìŠµí•˜ì—¬ ë³´ì™„ì´ í•„ìš”í•¨ )
 	public static void main_pkh(String[] args) {
 		Scanner in = new Scanner(System.in);
-		
+
 		String input= in.nextLine();
 		String output ="";
-		
+
 		char[] beforeArray = input.toCharArray();
 		char[] afterArray = new char[100];
-	
+
 		int loop = 0;
 		int length = beforeArray.length - 1;
 		String specialChar = "!@#$%&*()'+,-./:;<=>?[]^_`{|}";
-		
-		for(char ch :beforeArray) {	
-			
-			// Æ¯¼ö¹®ÀÚ°¡ ¾Æ´Ñ°æ¿ì  
+
+		for(char ch :beforeArray) {
+
+			// íŠ¹ìˆ˜ë¬¸ìê°€ ì•„ë‹Œê²½ìš°
 			if(!specialChar.contains(Character.toString(ch))) {
 				afterArray[length-loop] = ch;
-			// Æ¯¼ö¹®ÀÚÀÎ °æ¿ì 
+				// íŠ¹ìˆ˜ë¬¸ìì¸ ê²½ìš°
 			}else {
 				afterArray[loop] = ch;
 			}
 			loop++;
-			
+
 		}
-		
+
 		output = new String(afterArray);
-		
+
 		System.out.println(output);
-			
+
 	}
 
 }

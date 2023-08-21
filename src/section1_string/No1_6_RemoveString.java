@@ -3,24 +3,24 @@ package section1_string;
 import java.util.Scanner;
 
 /**
- * ¼³¸í
- * ¼Ò¹®ÀÚ·Î µÈ ÇÑ°³ÀÇ ¹®ÀÚ¿­ÀÌ ÀÔ·ÂµÇ¸é Áßº¹µÈ ¹®ÀÚ¸¦ Á¦°ÅÇÏ°í Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
- * Áßº¹ÀÌ Á¦°ÅµÈ ¹®ÀÚ¿­ÀÇ °¢ ¹®ÀÚ´Â ¿ø·¡ ¹®ÀÚ¿­ÀÇ ¼ø¼­¸¦ À¯ÁöÇÕ´Ï´Ù.
- * 
- * ÀÔ·Â
- * Ã¹ ÁÙ¿¡ ¹®ÀÚ¿­ÀÌ ÀÔ·ÂµË´Ï´Ù. ¹®ÀÚ¿­ÀÇ ±æÀÌ´Â 100À» ³ÑÁö ¾Ê´Â´Ù.
- * 
- * Ãâ·Â
- * Ã¹ ÁÙ¿¡ Áßº¹¹®ÀÚ°¡ Á¦°ÅµÈ ¹®ÀÚ¿­À» Ãâ·ÂÇÕ´Ï´Ù.
- * ¿¹½Ã ksekkset -> kset
- * 
- * [Áß¿ä] º¸¿ÏÁ¡  
- * 1. ¾Ë°í¸®Áò ¹®Á¦¿¡ ÀÍ¼÷ÇÏÁö ¾ÊÀ½ (10ºĞ °í¹Î)
- * 2. JAVA API doc ÀĞ±âÀ§ÇÑ ¿µ¾î ÇĞ½ÀÇÊ¿ä
- * 
- * [Áß¿ä] ¹è¿îÁ¡
- * String °´Ã¼ÀÇ indexOf() method ´Â ÇØ´ç¹®ÀÚ°¡ Ã³À½¹ß°ßµÈ index¸¦ ¹İÈ¯ÇÔ   
- * 
+ * ì„¤ëª…
+ * ì†Œë¬¸ìë¡œ ëœ í•œê°œì˜ ë¬¸ìì—´ì´ ì…ë ¥ë˜ë©´ ì¤‘ë³µëœ ë¬¸ìë¥¼ ì œê±°í•˜ê³  ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”.
+ * ì¤‘ë³µì´ ì œê±°ëœ ë¬¸ìì—´ì˜ ê° ë¬¸ìëŠ” ì›ë˜ ë¬¸ìì—´ì˜ ìˆœì„œë¥¼ ìœ ì§€í•©ë‹ˆë‹¤.
+ *
+ * ì…ë ¥
+ * ì²« ì¤„ì— ë¬¸ìì—´ì´ ì…ë ¥ë©ë‹ˆë‹¤. ë¬¸ìì—´ì˜ ê¸¸ì´ëŠ” 100ì„ ë„˜ì§€ ì•ŠëŠ”ë‹¤.
+ *
+ * ì¶œë ¥
+ * ì²« ì¤„ì— ì¤‘ë³µë¬¸ìê°€ ì œê±°ëœ ë¬¸ìì—´ì„ ì¶œë ¥í•©ë‹ˆë‹¤.
+ * ì˜ˆì‹œ ksekkset -> kset
+ *
+ * [ì¤‘ìš”] ë³´ì™„ì 
+ * 1. ì•Œê³ ë¦¬ì¦˜ ë¬¸ì œì— ìµìˆ™í•˜ì§€ ì•ŠìŒ (10ë¶„ ê³ ë¯¼)
+ * 2. JAVA API doc ì½ê¸°ìœ„í•œ ì˜ì–´ í•™ìŠµí•„ìš”
+ *
+ * [ì¤‘ìš”] ë°°ìš´ì 
+ * String ê°ì²´ì˜ indexOf() method ëŠ” í•´ë‹¹ë¬¸ìê°€ ì²˜ìŒë°œê²¬ëœ indexë¥¼ ë°˜í™˜í•¨
+ *
  * @author kwang
  *
  */
@@ -29,32 +29,32 @@ public class No1_6_RemoveString {
 
 	public static void main(String[] args) {
 		No1_6_RemoveString removeStr = new No1_6_RemoveString();
-		
+
 		Scanner kb = new Scanner(System.in);
 		String str = kb.next();
 		System.out.print(removeStr.solution(str));
 	}
-	
-	
+
+
 	public String solution(String str) {
 		String answer="";
-		
+
 		for(int loop=0; loop<str.length(); loop++) {
-			
+
 //			System.out.println("------------------------------------");
-//			System.out.println("¹®ÀÚ : " +str.charAt(loop) );
+//			System.out.println("ë¬¸ì : " +str.charAt(loop) );
 //			System.out.println("index : "+loop);
-//			System.out.println("ÇØ´ç ¹®ÀÚ°¡ Ã³À½ ¹ß°ßµÈ index : "+ str.indexOf(str.charAt(loop)));
+//			System.out.println("í•´ë‹¹ ë¬¸ìê°€ ì²˜ìŒ ë°œê²¬ëœ index : "+ str.indexOf(str.charAt(loop)));
 //			System.out.println("------------------------------------");
-			
+
 			if(loop == str.indexOf(str.charAt(loop))) {
 				answer += str.charAt(loop);
 			}
-			
+
 		}
-		
+
 		return answer;
 	}
-	
+
 
 }

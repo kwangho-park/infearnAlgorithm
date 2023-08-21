@@ -3,38 +3,38 @@ package section1_string;
 import java.util.Scanner;
 
 /**
- * 1. ¹®ÀÚ Ã£±â (String)
- * ¼³¸í
- * ÇÑ °³ÀÇ ¹®ÀÚ¿­À» ÀÔ·Â¹Þ°í, Æ¯Á¤ ¹®ÀÚ¸¦ ÀÔ·Â¹Þ¾Æ
- * ÇØ´ç Æ¯Á¤¹®ÀÚ°¡ ÀÔ·Â¹ÞÀº ¹®ÀÚ¿­¿¡ ¸î °³ Á¸ÀçÇÏ´ÂÁö ¾Ë¾Æ³»´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
- * ´ë¼Ò¹®ÀÚ¸¦ ±¸ºÐÇÏÁö ¾Ê½À´Ï´Ù.¹®ÀÚ¿­ÀÇ ±æÀÌ´Â 100À» ³ÑÁö ¾Ê½À´Ï´Ù.
+ * 1. ë¬¸ìž ì°¾ê¸° (String)
+ * ì„¤ëª…
+ * í•œ ê°œì˜ ë¬¸ìžì—´ì„ ìž…ë ¥ë°›ê³ , íŠ¹ì • ë¬¸ìžë¥¼ ìž…ë ¥ë°›ì•„
+ * í•´ë‹¹ íŠ¹ì •ë¬¸ìžê°€ ìž…ë ¥ë°›ì€ ë¬¸ìžì—´ì— ëª‡ ê°œ ì¡´ìž¬í•˜ëŠ”ì§€ ì•Œì•„ë‚´ëŠ” í”„ë¡œê·¸ëž¨ì„ ìž‘ì„±í•˜ì„¸ìš”.
+ * ëŒ€ì†Œë¬¸ìžë¥¼ êµ¬ë¶„í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.ë¬¸ìžì—´ì˜ ê¸¸ì´ëŠ” 100ì„ ë„˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
  *
  *
- * ÀÔ·Â
- * Ã¹ ÁÙ¿¡ ¹®ÀÚ¿­ÀÌ ÁÖ¾îÁö°í, µÎ ¹øÂ° ÁÙ¿¡ ¹®ÀÚ°¡ ÁÖ¾îÁø´Ù.
- * ¹®ÀÚ¿­Àº ¿µ¾î ¾ËÆÄºªÀ¸·Î¸¸ ±¸¼ºµÇ¾î ÀÖ½À´Ï´Ù.
+ * ìž…ë ¥
+ * ì²« ì¤„ì— ë¬¸ìžì—´ì´ ì£¼ì–´ì§€ê³ , ë‘ ë²ˆì§¸ ì¤„ì— ë¬¸ìžê°€ ì£¼ì–´ì§„ë‹¤.
+ * ë¬¸ìžì—´ì€ ì˜ì–´ ì•ŒíŒŒë²³ìœ¼ë¡œë§Œ êµ¬ì„±ë˜ì–´ ìžˆìŠµë‹ˆë‹¤.
  *
  *
- * Ãâ·Â
- * Ã¹ ÁÙ¿¡ ÇØ´ç ¹®ÀÚÀÇ °³¼ö¸¦ Ãâ·ÂÇÑ´Ù.
+ * ì¶œë ¥
+ * ì²« ì¤„ì— í•´ë‹¹ ë¬¸ìžì˜ ê°œìˆ˜ë¥¼ ì¶œë ¥í•œë‹¤.
  *
  *
- * ¿¹½Ã ÀÔ·Â 1
+ * ì˜ˆì‹œ ìž…ë ¥ 1
  * Computercooler
  * c
  *
- * ¿¹½Ã Ãâ·Â 1
+ * ì˜ˆì‹œ ì¶œë ¥ 1
  * 2
  *
- * [·ÎÁ÷]
- * 1. ÀÔ·Â¹ÞÀº ¹®ÀÚ¿­(String structure) À» character array structure ·Î º¯È¯
- * 2. ¹Ýº¹ÇÏ¸é¼­ ÀÔ·Â¹ÞÀº ¹®ÀÚ¸¦ ºñ±³ÇÏ¿© °á°ú°ª (count) Áõ°¡
- * 3. °á°ú Ãâ·Â
+ * [ë¡œì§]
+ * 1. ìž…ë ¥ë°›ì€ ë¬¸ìžì—´(String structure) ì„ character array structure ë¡œ ë³€í™˜
+ * 2. ë°˜ë³µí•˜ë©´ì„œ ìž…ë ¥ë°›ì€ ë¬¸ìžë¥¼ ë¹„êµí•˜ì—¬ ê²°ê³¼ê°’ (count) ì¦ê°€
+ * 3. ê²°ê³¼ ì¶œë ¥
  *
  */
 public class No1_1_SearchCharacter {
 
-    // Á¤´ä (10ºÐ ¼Ò¿ä)
+    // ì •ë‹µ (10ë¶„ ì†Œìš”)
     public static void main (String args[]){
         String inputStr = "";
 

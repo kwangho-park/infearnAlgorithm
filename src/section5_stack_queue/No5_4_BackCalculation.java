@@ -4,51 +4,51 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
- * 4. ÈÄÀ§½Ä ¿¬»ê(postfix) = stack data structure
+ * 4. í›„ìœ„ì‹ ì—°ì‚°(postfix) = stack data structure
  *
- * ¼³¸í
+ * ì„¤ëª…
  *
- * ÈÄÀ§¿¬»ê½ÄÀÌ ÁÖ¾îÁö¸é ¿¬»êÇÑ °á°ú¸¦ Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
- * ¸¸¾à 3*(5+2)-9 À» ÈÄÀ§¿¬»ê½ÄÀ¸·Î Ç¥ÇöÇÏ¸é 352+*9- ·Î Ç¥ÇöµÇ¸ç ±× °á°ú´Â 12ÀÔ´Ï´Ù.
- * (Âü°í)
- * ÁßÀ§Ç¥±â½Ä : ¿¬»êÀÚ°¡ ÇÇ¿¬»êÀÚ »çÀÌ¿¡ À§Ä¡
- * ÈÄÀ§Ç¥±â½Ä : ¿¬»êÀÚ°¡ ÇÇ¿¬»êÀÚ ÈÄÀ§ (=µÚ)¿¡ À§Ä¡
- * = ¿¬»ê¹æ¹ý
- * 1. 352+*9- ¸¦ ¿¬»êÇÏ·Á´Â °æ¿ì ÀüÀ§¿¡¼­ºÎÅÍ ÈÄÀ§±îÁö ½ºÄµÇÏ¸é¼­ ¿¬»êÀÚ¸¦ Å½»ö
- * 2. ¿¬»êÀÚ°¡ ½ºÄµµÇ¸é ÇØ´ç ¿¬»êÀÚ·Î ¾ÕÀÇ 2°³ÀÇ ÇÇ¿¬»êÀÚ(=¼ýÀÚ) ¸¦ ¿¬»ê½ÇÇà
- * 3. ¿¬»ê°á°ú´Â ÇØ´çÀ§Ä¡¿¡ ÀúÀåÇÏ°í 1~2¹øÀ» ¹Ýº¹ÇÏ¿© °á°ú¸¦ µµÃâÇÔ
+ * í›„ìœ„ì—°ì‚°ì‹ì´ ì£¼ì–´ì§€ë©´ ì—°ì‚°í•œ ê²°ê³¼ë¥¼ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ëž¨ì„ ìž‘ì„±í•˜ì„¸ìš”.
+ * ë§Œì•½ 3*(5+2)-9 ì„ í›„ìœ„ì—°ì‚°ì‹ìœ¼ë¡œ í‘œí˜„í•˜ë©´ 352+*9- ë¡œ í‘œí˜„ë˜ë©° ê·¸ ê²°ê³¼ëŠ” 12ìž…ë‹ˆë‹¤.
+ * (ì°¸ê³ )
+ * ì¤‘ìœ„í‘œê¸°ì‹ : ì—°ì‚°ìžê°€ í”¼ì—°ì‚°ìž ì‚¬ì´ì— ìœ„ì¹˜
+ * í›„ìœ„í‘œê¸°ì‹ : ì—°ì‚°ìžê°€ í”¼ì—°ì‚°ìž í›„ìœ„ (=ë’¤)ì— ìœ„ì¹˜
+ * = ì—°ì‚°ë°©ë²•
+ * 1. 352+*9- ë¥¼ ì—°ì‚°í•˜ë ¤ëŠ” ê²½ìš° ì „ìœ„ì—ì„œë¶€í„° í›„ìœ„ê¹Œì§€ ìŠ¤ìº”í•˜ë©´ì„œ ì—°ì‚°ìžë¥¼ íƒìƒ‰
+ * 2. ì—°ì‚°ìžê°€ ìŠ¤ìº”ë˜ë©´ í•´ë‹¹ ì—°ì‚°ìžë¡œ ì•žì˜ 2ê°œì˜ í”¼ì—°ì‚°ìž(=ìˆ«ìž) ë¥¼ ì—°ì‚°ì‹¤í–‰
+ * 3. ì—°ì‚°ê²°ê³¼ëŠ” í•´ë‹¹ìœ„ì¹˜ì— ì €ìž¥í•˜ê³  1~2ë²ˆì„ ë°˜ë³µí•˜ì—¬ ê²°ê³¼ë¥¼ ë„ì¶œí•¨
  *
- * ÀÔ·Â
- * Ã¹ ÁÙ¿¡ ÈÄÀ§¿¬»ê½ÄÀÌ ÁÖ¾îÁý´Ï´Ù. ¿¬»ê½ÄÀÇ ±æÀÌ´Â 50À» ³ÑÁö ¾Ê½À´Ï´Ù.
- * ½ÄÀº 1~9ÀÇ ¼ýÀÚ¿Í +, -, *, / ¿¬»êÀÚ·Î¸¸ ÀÌ·ç¾îÁø´Ù.
- *
- *
- * Ãâ·Â
- * ¿¬»êÇÑ °á°ú¸¦ Ãâ·ÂÇÕ´Ï´Ù.
+ * ìž…ë ¥
+ * ì²« ì¤„ì— í›„ìœ„ì—°ì‚°ì‹ì´ ì£¼ì–´ì§‘ë‹ˆë‹¤. ì—°ì‚°ì‹ì˜ ê¸¸ì´ëŠ” 50ì„ ë„˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
+ * ì‹ì€ 1~9ì˜ ìˆ«ìžì™€ +, -, *, / ì—°ì‚°ìžë¡œë§Œ ì´ë£¨ì–´ì§„ë‹¤.
  *
  *
- * ¿¹½Ã ÀÔ·Â 1
+ * ì¶œë ¥
+ * ì—°ì‚°í•œ ê²°ê³¼ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
+ *
+ *
+ * ì˜ˆì‹œ ìž…ë ¥ 1
  * 352+*9-
  *
- * ¿¹½Ã Ãâ·Â 1
+ * ì˜ˆì‹œ ì¶œë ¥ 1
  * 12
  *
- * [·ÎÁ÷]
- * 1. ¿ÞÂÊºÎÅÍ ¼ýÀÚ¸¦ stack ±¸Á¶¿¡ ³ÖÀ½
- * 2. ¿¬»êÀÚ¸¦ ¸¸³ª´Â °æ¿ì left pointer, right pointer ¸¦ ÇØ´ç ¿¬»êÀÚ·Î ¿¬»êÇÏ°í, °á°ú¸¦ stack ¿¡ ÀúÀåÇÔ
+ * [ë¡œì§]
+ * 1. ì™¼ìª½ë¶€í„° ìˆ«ìžë¥¼ stack êµ¬ì¡°ì— ë„£ìŒ
+ * 2. ì—°ì‚°ìžë¥¼ ë§Œë‚˜ëŠ” ê²½ìš° left pointer, right pointer ë¥¼ í•´ë‹¹ ì—°ì‚°ìžë¡œ ì—°ì‚°í•˜ê³ , ê²°ê³¼ë¥¼ stack ì— ì €ìž¥í•¨
  *
  *
  */
 public class No5_4_BackCalculation {
 
-    // [Á¤´ä]
+    // [ì •ë‹µ]
     public int solution(String str){
         int answer=0;
         Stack<Integer> stack = new Stack<>();
         for(char x : str.toCharArray() ){
-            if(Character.isDigit(x)){       // ¼ýÀÚÀÎÁö È®ÀÎ
-                stack.push(x-48);      // ¼ýÀÚ¸¦ statck ¿¡ ÀúÀå ('5' -> ¾Æ½ºÅ°ÄÚµå º¯È¯ -> ¼ýÀÚ 53 )
-            }else{                          // ¿¬»êÀÚÀÎ °æ¿ì
+            if(Character.isDigit(x)){       // ìˆ«ìžì¸ì§€ í™•ì¸
+                stack.push(x-48);      // ìˆ«ìžë¥¼ statck ì— ì €ìž¥ ('5' -> ì•„ìŠ¤í‚¤ì½”ë“œ ë³€í™˜ -> ìˆ«ìž 53 )
+            }else{                          // ì—°ì‚°ìžì¸ ê²½ìš°
                 int right=stack.pop();
                 int left=stack.pop();
                 if(x=='-') stack.push(left-right);

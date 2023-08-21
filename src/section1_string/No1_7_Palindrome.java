@@ -3,88 +3,88 @@ package section1_string;
 import java.util.Scanner;
 
 /**
- * ¼³¸í
- * ¾Õ¿¡¼­ ÀĞÀ» ¶§³ª µÚ¿¡¼­ ÀĞÀ» ¶§³ª °°Àº ¹®ÀÚ¿­À» È¸¹® ¹®ÀÚ¿­(Palindrome)ÀÌ¶ó°í ÇÕ´Ï´Ù.
- *  * ¹®ÀÚ¿­ÀÌ ÀÔ·ÂµÇ¸é ÇØ´ç ¹®ÀÚ¿­ÀÌ È¸¹® ¹®ÀÚ¿­ÀÌ¸é "YES", È¸¹® ¹®ÀÚ¿­ÀÌ ¾Æ´Ï¸é ¡°NO"¸¦ Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
- * ´Ü È¸¹®À» °Ë»çÇÒ ¶§ ´ë¼Ò¹®ÀÚ¸¦ ±¸ºĞÇÏÁö ¾Ê½À´Ï´Ù.
- * 
- * ÀÔ·Â
- * Ã¹ ÁÙ¿¡ ±æÀÌ 100À» ³ÑÁö ¾Ê´Â °ø¹éÀÌ ¾ø´Â ¹®ÀÚ¿­ÀÌ ÁÖ¾îÁı´Ï´Ù.
- * 
- * Ãâ·Â
- * Ã¹ ¹øÂ° ÁÙ¿¡ È¸¹® ¹®ÀÚ¿­ÀÎÁöÀÇ °á°ú¸¦ YES ¶Ç´Â NO·Î Ãâ·ÂÇÕ´Ï´Ù.
- * 
+ * ì„¤ëª…
+ * ì•ì—ì„œ ì½ì„ ë•Œë‚˜ ë’¤ì—ì„œ ì½ì„ ë•Œë‚˜ ê°™ì€ ë¬¸ìì—´ì„ íšŒë¬¸ ë¬¸ìì—´(Palindrome)ì´ë¼ê³  í•©ë‹ˆë‹¤.
+ *  * ë¬¸ìì—´ì´ ì…ë ¥ë˜ë©´ í•´ë‹¹ ë¬¸ìì—´ì´ íšŒë¬¸ ë¬¸ìì—´ì´ë©´ "YES", íšŒë¬¸ ë¬¸ìì—´ì´ ì•„ë‹ˆë©´ â€œNO"ë¥¼ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”.
+ * ë‹¨ íšŒë¬¸ì„ ê²€ì‚¬í•  ë•Œ ëŒ€ì†Œë¬¸ìë¥¼ êµ¬ë¶„í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
+ *
+ * ì…ë ¥
+ * ì²« ì¤„ì— ê¸¸ì´ 100ì„ ë„˜ì§€ ì•ŠëŠ” ê³µë°±ì´ ì—†ëŠ” ë¬¸ìì—´ì´ ì£¼ì–´ì§‘ë‹ˆë‹¤.
+ *
+ * ì¶œë ¥
+ * ì²« ë²ˆì§¸ ì¤„ì— íšŒë¬¸ ë¬¸ìì—´ì¸ì§€ì˜ ê²°ê³¼ë¥¼ YES ë˜ëŠ” NOë¡œ ì¶œë ¥í•©ë‹ˆë‹¤.
+ *
  * ex) gooG -> YES
- * 
- * [Áß¿ä] º¸¿ÏÁ¡
- * ¾Æ´Â°Íµµ ½Ç¼ö°¡ ³Ê¹« ¸¹À½À¸·Î ½Ã°£¿¡ ¦i±âÁö¸¸... Ä§ÂøÇÏ°Ô Ç®¾î¾ßÇÒ°ÍÀ¸·Î »ı°¢µÊ  
- * (3-4°Ç ½Ç¼ö :String ¹İº¹¹®¿¡¼­ length() ±æÀÌ¸¸Å­ ¹İº¹, str.toLowerCase() ÀÇ ¹İÈ¯°ªÀ» ¹ö·ÁµÎ°í str·Î rotationStrÀ» Á¶¸² µîµî...
- * ¿©À¯°¡ ºÎÁ·ÇÑµ¥ ÀÌ°Ç °æÇèÀÌ ÃàÀûµÉ¼ö·Ï °³¼±µÉ ¿©Áö°¡ ÀÖÀ½ 
- * 
+ *
+ * [ì¤‘ìš”] ë³´ì™„ì 
+ * ì•„ëŠ”ê²ƒë„ ì‹¤ìˆ˜ê°€ ë„ˆë¬´ ë§ìŒìœ¼ë¡œ ì‹œê°„ì— ì«’ê¸°ì§€ë§Œ... ì¹¨ì°©í•˜ê²Œ í’€ì–´ì•¼í• ê²ƒìœ¼ë¡œ ìƒê°ë¨
+ * (3-4ê±´ ì‹¤ìˆ˜ :String ë°˜ë³µë¬¸ì—ì„œ length() ê¸¸ì´ë§Œí¼ ë°˜ë³µ, str.toLowerCase() ì˜ ë°˜í™˜ê°’ì„ ë²„ë ¤ë‘ê³  strë¡œ rotationStrì„ ì¡°ë¦¼ ë“±ë“±...
+ * ì—¬ìœ ê°€ ë¶€ì¡±í•œë° ì´ê±´ ê²½í—˜ì´ ì¶•ì ë ìˆ˜ë¡ ê°œì„ ë  ì—¬ì§€ê°€ ìˆìŒ
+ *
  * @author kwang
  *
  */
 public class No1_7_Palindrome {
 
-	// °­ÀÇ Ç®ÀÌ 
+	// ê°•ì˜ í’€ì´
 	public static void main(String args[]) {
-		
+
 		No1_7_Palindrome Palindrome = new No1_7_Palindrome();
 		Scanner in = new Scanner(System.in);
 		String input=in.next();
 		System.out.println(Palindrome.solution(input));
-		
+
 	}
-	
-	// °­ÀÇ Ç®ÀÌ 
+
+	// ê°•ì˜ í’€ì´
 	public String solution(String input) {
 		String result="YES";
-		
+
 		input = input.toLowerCase();
 		int length = input.length();
-		
+
 		for(int loop=0;loop<length/2;loop++) {
 			if(input.charAt(loop)!=input.charAt(length-1-loop)) return "NO";
 		}
-		
+
 		return result;
 	}
-	
+
 	//////////////////////////////////////////////////////////////
-	
-	// 35ºĞ ¼Ò¿ä 
-	// Á¤´ä 
+
+	// 35ë¶„ ì†Œìš”
+	// ì •ë‹µ
 	public static void main_pkh(String args[]) {
-		
+
 		No1_7_Palindrome palindrom = new No1_7_Palindrome();
-		
+
 		Scanner kb = new Scanner(System.in);
 		String str = kb.next();
 		System.out.print(palindrom.solution_pkh(str));
-		
+
 	}
-	
+
 	public String solution_pkh(String str) {
-		
+
 		String answer = "";
 		String rotationStr="";
-		
+
 		String lowcaseStr = str.toLowerCase();
-		
+
 		for(int loop=lowcaseStr.length() - 1; loop >= 0 ; loop--) {
-			
+
 			rotationStr+= lowcaseStr.charAt(loop);
-			
+
 		}
-		
+
 		if(lowcaseStr.equals(rotationStr)) {
 			answer = "YES";
 		}else {
 			answer = "NO";
 		}
-		
-		
+
+
 		return answer;
 	}
-	
+
 }

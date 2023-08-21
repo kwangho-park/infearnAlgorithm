@@ -3,100 +3,100 @@ package section1_string;
 import java.util.Scanner;
 
 /**
- * ¼³¸í
- * ¾Õ¿¡¼­ ÀÐÀ» ¶§³ª µÚ¿¡¼­ ÀÐÀ» ¶§³ª °°Àº ¹®ÀÚ¿­À» ÆÓ¸°µå·ÒÀÌ¶ó°í ÇÕ´Ï´Ù.
- * ¹®ÀÚ¿­ÀÌ ÀÔ·ÂµÇ¸é ÇØ´ç ¹®ÀÚ¿­ÀÌ ÆÓ¸°µå·ÒÀÌ¸é "YES", ¾Æ´Ï¸é ¡°NO"¸¦ Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
- * ´Ü È¸¹®À» °Ë»çÇÒ ¶§ ¾ËÆÄºª¸¸ °¡Áö°í È¸¹®À» °Ë»çÇÏ¸ç, ´ë¼Ò¹®ÀÚ¸¦ ±¸ºÐÇÏÁö ¾Ê½À´Ï´Ù.
- * ¾ËÆÄºª ÀÌ¿ÜÀÇ ¹®ÀÚµéÀÇ ¹«½ÃÇÕ´Ï´Ù.
- * 
- * 
- * ÀÔ·Â
- * Ã¹ ÁÙ¿¡ ±æÀÌ 100À» ³ÑÁö ¾Ê´Â °ø¹éÀÌ ¾ø´Â ¹®ÀÚ¿­ÀÌ ÁÖ¾îÁý´Ï´Ù.
- * 
- * 
- * Ãâ·Â
- * Ã¹ ¹øÂ° ÁÙ¿¡ ÆÓ¸°µå·ÒÀÎÁöÀÇ °á°ú¸¦ YES ¶Ç´Â NO·Î Ãâ·ÂÇÕ´Ï´Ù.
- * 
- * ¿¹½Ã) found7, time: study; Yduts; emit, 7Dnuof -> YES
+ * ì„¤ëª…
+ * ì•žì—ì„œ ì½ì„ ë•Œë‚˜ ë’¤ì—ì„œ ì½ì„ ë•Œë‚˜ ê°™ì€ ë¬¸ìžì—´ì„ íŒ°ë¦°ë“œë¡¬ì´ë¼ê³  í•©ë‹ˆë‹¤.
+ * ë¬¸ìžì—´ì´ ìž…ë ¥ë˜ë©´ í•´ë‹¹ ë¬¸ìžì—´ì´ íŒ°ë¦°ë“œë¡¬ì´ë©´ "YES", ì•„ë‹ˆë©´ â€œNO"ë¥¼ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ëž¨ì„ ìž‘ì„±í•˜ì„¸ìš”.
+ * ë‹¨ íšŒë¬¸ì„ ê²€ì‚¬í•  ë•Œ ì•ŒíŒŒë²³ë§Œ ê°€ì§€ê³  íšŒë¬¸ì„ ê²€ì‚¬í•˜ë©°, ëŒ€ì†Œë¬¸ìžë¥¼ êµ¬ë¶„í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
+ * ì•ŒíŒŒë²³ ì´ì™¸ì˜ ë¬¸ìžë“¤ì˜ ë¬´ì‹œí•©ë‹ˆë‹¤.
+ *
+ *
+ * ìž…ë ¥
+ * ì²« ì¤„ì— ê¸¸ì´ 100ì„ ë„˜ì§€ ì•ŠëŠ” ê³µë°±ì´ ì—†ëŠ” ë¬¸ìžì—´ì´ ì£¼ì–´ì§‘ë‹ˆë‹¤.
+ *
+ *
+ * ì¶œë ¥
+ * ì²« ë²ˆì§¸ ì¤„ì— íŒ°ë¦°ë“œë¡¬ì¸ì§€ì˜ ê²°ê³¼ë¥¼ YES ë˜ëŠ” NOë¡œ ì¶œë ¥í•©ë‹ˆë‹¤.
+ *
+ * ì˜ˆì‹œ) found7, time: study; Yduts; emit, 7Dnuof -> YES
  * @author kwang
  *
- * [Áß¿ä] º¸¿ÏÁ¡ 
- * 1. String.charAt() À» String.indexOf() À¸·Î Âø°¢ÇÏ¿© ¿À·ù ¹ß»ý -> java doc³ª ide ÀÇ method command ¸¦ Á¤È®ÇÏ°Ô ÀÐ°í »ç¿ëÇØ¾ßÇÔ  
- * 2. Á¤±Ô½ÄÀÌ Á¦´ë·Î µ¿ÀÛÇÏÁö¾Ê¾Æ¼­ ½Ã°£Áö¿¬ ¹ß»ý -> Á¤±Ô½Ä »ç¿ë¹ý ¼÷Áö ÇÊ¿ä
- * 3. String À» È¿°úÀûÀ¸·Î ¼öÁ¤ ÇÒ ¼ö ÀÖ´Â StringBuilder È°¿ë (ÆÓ¸°µå·Ó)     
+ * [ì¤‘ìš”] ë³´ì™„ì 
+ * 1. String.charAt() ì„ String.indexOf() ìœ¼ë¡œ ì°©ê°í•˜ì—¬ ì˜¤ë¥˜ ë°œìƒ -> java docë‚˜ ide ì˜ method command ë¥¼ ì •í™•í•˜ê²Œ ì½ê³  ì‚¬ìš©í•´ì•¼í•¨
+ * 2. ì •ê·œì‹ì´ ì œëŒ€ë¡œ ë™ìž‘í•˜ì§€ì•Šì•„ì„œ ì‹œê°„ì§€ì—° ë°œìƒ -> ì •ê·œì‹ ì‚¬ìš©ë²• ìˆ™ì§€ í•„ìš”
+ * 3. String ì„ íš¨ê³¼ì ìœ¼ë¡œ ìˆ˜ì • í•  ìˆ˜ ìžˆëŠ” StringBuilder í™œìš© (íŒ°ë¦°ë“œë¡­)
  *
  */
 public class No1_8_Palindrome {
 
-	
-	// °­ÀÇ Ç®ÀÌ 
+
+	// ê°•ì˜ í’€ì´
 	public static void main(String[] args) {
-		
+
 		String result = "";
-		
+
 		Scanner in = new Scanner(System.in);
 		String input = in.nextLine();
 		String regex = "[^A-z]";
-		
+
 		String original = input.toUpperCase().replaceAll(regex, "");
-		
-		// ¹®ÀÚ¿­ µÚÁý±â
+
+		// ë¬¸ìžì—´ ë’¤ì§‘ê¸°
 		StringBuilder stringBuilder = new StringBuilder(original);
 		String tmp = stringBuilder.reverse().toString();
-		
+
 		if(original.equals(tmp)) {
 			result = "YES";
 		}else {
 			result = "NO";
 		}
-		
+
 		System.out.print(result);
-		
+
 	}
-	
+
 	///////////////////////////////////////////////////////////
-	
-	// Á¤´ä
-	// 1½Ã°£ ÀÌ»ó ¼Ò¿ä 
-	// Ç®ÀÌ È®ÀÎ¿¹Á¤ 
+
+	// ì •ë‹µ
+	// 1ì‹œê°„ ì´ìƒ ì†Œìš”
+	// í’€ì´ í™•ì¸ì˜ˆì •
 	public static void main_pkh(String[] args) {
-		
+
 		Scanner in = new Scanner(System.in);
-		
-		String input= in.nextLine(); 
-		
+
+		String input= in.nextLine();
+
 		String result = "";
-		
+
 		No1_8_Palindrome palindrome = new No1_8_Palindrome();
-		
+
 		result = palindrome.solution_pkh(input);
-		
-		
+
+
 		System.out.println(result);
-	
+
 	}
-	
-	
+
+
 	public String solution_pkh(String input) {
-		
+
 		String result = "";
-//		String regex = "[0-9~!@#$%^&*()-_=+.,\s]";		// error : ÇØ´ç Á¤±Ô½ÄÀ» replaceAll¿¡ Ã¹¹øÂ° ÀÎÀÚ·Î Àü´ÞÇÏ¸é ´ë¹®ÀÚ°¡ °É¸² 
-		
+//		String regex = "[0-9~!@#$%^&*()-_=+.,\s]";		// error : í•´ë‹¹ ì •ê·œì‹ì„ replaceAllì— ì²«ë²ˆì§¸ ì¸ìžë¡œ ì „ë‹¬í•˜ë©´ ëŒ€ë¬¸ìžê°€ ê±¸ë¦¼
+
 		String regex = "[^a-zA-Z]";		//regular expression
-		
+
 		String afterInput = "";
-		
-		String changeInput = ""; 
-		
-		
+
+		String changeInput = "";
+
+
 		afterInput = input.replaceAll(regex, "");
-		
+
 		afterInput = afterInput.toLowerCase();
-		
+
 		int size = afterInput.length();
-		
+
 		for(int loop=size-1 ; loop >= 0 ; loop--) {
-			
+
 			changeInput += afterInput.charAt(loop);
 		}
 
@@ -105,11 +105,11 @@ public class No1_8_Palindrome {
 		}else {
 			result= "NO";
 		}
-		
+
 		return result;
-		
+
 	}
-	
-	
-	
+
+
+
 }

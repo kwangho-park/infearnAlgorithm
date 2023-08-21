@@ -6,71 +6,71 @@ import java.util.Scanner;
 import java.util.*;
 
 /*
-* 3_2 CommonElement (two pointers ¾Ë°í¸®Áò, ±³ÁıÇÕ ¹®Á¦)
-* 
-* A, B µÎ °³ÀÇ ÁıÇÕÀÌ ÁÖ¾îÁö¸é ¡®µÎ ÁıÇÕÀÇ °øÅë ¿ø¼Ò¸¦ ÃßÃâÇÏ¿© ¿À¸§Â÷¼ø¡¯ À¸·Î Ãâ·ÂÇÏ´Â ÇÁ·Î ±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
-* 
-* [ÀÔ·Â¼³¸í]
-* Ã¹ ¹øÂ° ÁÙ¿¡ ÁıÇÕ AÀÇ Å©±â N(1<=N<=30,000)ÀÌ ÁÖ¾îÁı´Ï´Ù.
-* µÎ ¹øÂ° ÁÙ¿¡ N°³ÀÇ ¿ø¼Ò°¡ ÁÖ¾îÁı´Ï´Ù. ¿ø¼Ò°¡ Áßº¹µÇ¾î ÁÖ¾îÁöÁö ¾Ê½À´Ï´Ù.
-* ¼¼ ¹øÂ° ÁÙ¿¡ ÁıÇÕ BÀÇ Å©±â M(1<=M<=30,000)ÀÌ ÁÖ¾îÁı´Ï´Ù.
-* ³× ¹øÂ° ÁÙ¿¡ M°³ÀÇ ¿ø¼Ò°¡ ÁÖ¾îÁı´Ï´Ù. ¿ø¼Ò°¡ Áßº¹µÇ¾î ÁÖ¾îÁöÁö ¾Ê½À´Ï´Ù.
-* °¢ ÁıÇÕÀÇ ¿ø¼Ò´Â 1,000,000,000ÀÌÇÏÀÇ ÀÚ¿¬¼öÀÔ´Ï´Ù.
-* 
-* [Ãâ·Â¼³¸í]
-* µÎ ÁıÇÕÀÇ °øÅë¿ø¼Ò¸¦ ¿À¸§Â÷¼ø Á¤·ÄÇÏ¿© Ãâ·ÂÇÕ´Ï´Ù.
-* 
-* [¿¹½Ã ÀÔ·Â 1 ]
-* 5
-* 1 3 9 5 2
-* 5
-* 3 2 5 7 8
-* 
-* [¿¹½Ã Ãâ·Â 1]
-* 2 3 5
-* 
-* [·ÎÁ÷]
-* 1. 2°³ÀÇ int[] ¹è¿­À» ÀÔ·Â¹ŞÀ½ 
-* 2. Ã¹¹øÂ° ¹è¿­À» ±âÁØÀ¸·Î, µÎ¹øÂ° ¹è¿­À» 0¹ø index ºÎÅÍ max index±îÁö ¹İº¹ÇÏ¸é¼­ µ¿ÀÏÇÑ element À» Ã£À½
-* 3. ¹ß°ßµÈ element´Â int[] answer¿¡ ÀúÀåÇÔ 
-* 4. (??) answer ¹è¿­Àº Arrays.sort() ÇÔ¼ö·Î ¿À¸§Â÷¼ø Á¤·ÄÇÏ°í Ãâ·ÂÇÔ 
-* 
-* 
-* [¹è¿îÁ¡]
-* two pointer ¾Ë°í¸®Áò :  
-* ±¸±Û¸µº¸´Ù chatGPT ¸¦ È°¿ëÇÏ¸é °Ë»öÀÌ Á¶±İ´õ ¼öÈÎÇÏ°í ºü¸§ 
-* 
-* 
-* [°­ÀÇ ·ÎÁ÷]
-* 1. ÁıÇÕ A,B ¸¦ ¿À¸§Â÷¼ø Á¤·Ä
-* ÁıÇÕ A : 1 2 3 5 9
-* ÁıÇÕ B : 2 3 5 7 8 
-*   
-* 2. pointer 1Àº ÁıÇÕ A¿¡ Ã¹¹ø¤Š ¿ä¼Ò¸¦ °¡¸®Å°°í, pointer 2´Â ÁıÇÕ B¿¡ Ã¹¹øÂ° ¿ä¼Ò¸¦ °¡¸®Å´ 
-* 3. pointer 1,2 °ªÀ» ºñ±³ÇÏ¿© ÀÛÀº ÂÊÀÇ pointer Áõ°¡½ÃÅ´ 
-* 4. pointer 1,2 °ªÀ» ºñ±³ÇÏ¿© °ªÀÌ °°Àº °æ¿ì °øÅë¿ø¼Ò·Î ÀúÀåÇÔ
-* 
-*/
+ * 3_2 CommonElement (two pointers ì•Œê³ ë¦¬ì¦˜, êµì§‘í•© ë¬¸ì œ)
+ *
+ * A, B ë‘ ê°œì˜ ì§‘í•©ì´ ì£¼ì–´ì§€ë©´ â€˜ë‘ ì§‘í•©ì˜ ê³µí†µ ì›ì†Œë¥¼ ì¶”ì¶œí•˜ì—¬ ì˜¤ë¦„ì°¨ìˆœâ€™ ìœ¼ë¡œ ì¶œë ¥í•˜ëŠ” í”„ë¡œ ê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”.
+ *
+ * [ì…ë ¥ì„¤ëª…]
+ * ì²« ë²ˆì§¸ ì¤„ì— ì§‘í•© Aì˜ í¬ê¸° N(1<=N<=30,000)ì´ ì£¼ì–´ì§‘ë‹ˆë‹¤.
+ * ë‘ ë²ˆì§¸ ì¤„ì— Nê°œì˜ ì›ì†Œê°€ ì£¼ì–´ì§‘ë‹ˆë‹¤. ì›ì†Œê°€ ì¤‘ë³µë˜ì–´ ì£¼ì–´ì§€ì§€ ì•ŠìŠµë‹ˆë‹¤.
+ * ì„¸ ë²ˆì§¸ ì¤„ì— ì§‘í•© Bì˜ í¬ê¸° M(1<=M<=30,000)ì´ ì£¼ì–´ì§‘ë‹ˆë‹¤.
+ * ë„¤ ë²ˆì§¸ ì¤„ì— Mê°œì˜ ì›ì†Œê°€ ì£¼ì–´ì§‘ë‹ˆë‹¤. ì›ì†Œê°€ ì¤‘ë³µë˜ì–´ ì£¼ì–´ì§€ì§€ ì•ŠìŠµë‹ˆë‹¤.
+ * ê° ì§‘í•©ì˜ ì›ì†ŒëŠ” 1,000,000,000ì´í•˜ì˜ ìì—°ìˆ˜ì…ë‹ˆë‹¤.
+ *
+ * [ì¶œë ¥ì„¤ëª…]
+ * ë‘ ì§‘í•©ì˜ ê³µí†µì›ì†Œë¥¼ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬í•˜ì—¬ ì¶œë ¥í•©ë‹ˆë‹¤.
+ *
+ * [ì˜ˆì‹œ ì…ë ¥ 1 ]
+ * 5
+ * 1 3 9 5 2
+ * 5
+ * 3 2 5 7 8
+ *
+ * [ì˜ˆì‹œ ì¶œë ¥ 1]
+ * 2 3 5
+ *
+ * [ë¡œì§]
+ * 1. 2ê°œì˜ int[] ë°°ì—´ì„ ì…ë ¥ë°›ìŒ
+ * 2. ì²«ë²ˆì§¸ ë°°ì—´ì„ ê¸°ì¤€ìœ¼ë¡œ, ë‘ë²ˆì§¸ ë°°ì—´ì„ 0ë²ˆ index ë¶€í„° max indexê¹Œì§€ ë°˜ë³µí•˜ë©´ì„œ ë™ì¼í•œ element ì„ ì°¾ìŒ
+ * 3. ë°œê²¬ëœ elementëŠ” int[] answerì— ì €ì¥í•¨
+ * 4. (??) answer ë°°ì—´ì€ Arrays.sort() í•¨ìˆ˜ë¡œ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬í•˜ê³  ì¶œë ¥í•¨
+ *
+ *
+ * [ë°°ìš´ì ]
+ * two pointer ì•Œê³ ë¦¬ì¦˜ :
+ * êµ¬ê¸€ë§ë³´ë‹¤ chatGPT ë¥¼ í™œìš©í•˜ë©´ ê²€ìƒ‰ì´ ì¡°ê¸ˆë” ìˆ˜í›¨í•˜ê³  ë¹ ë¦„
+ *
+ *
+ * [ê°•ì˜ ë¡œì§]
+ * 1. ì§‘í•© A,B ë¥¼ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
+ * ì§‘í•© A : 1 2 3 5 9
+ * ì§‘í•© B : 2 3 5 7 8
+ *
+ * 2. pointer 1ì€ ì§‘í•© Aì— ì²«ë²ˆì¨° ìš”ì†Œë¥¼ ê°€ë¦¬í‚¤ê³ , pointer 2ëŠ” ì§‘í•© Bì— ì²«ë²ˆì§¸ ìš”ì†Œë¥¼ ê°€ë¦¬í‚´
+ * 3. pointer 1,2 ê°’ì„ ë¹„êµí•˜ì—¬ ì‘ì€ ìª½ì˜ pointer ì¦ê°€ì‹œí‚´
+ * 4. pointer 1,2 ê°’ì„ ë¹„êµí•˜ì—¬ ê°’ì´ ê°™ì€ ê²½ìš° ê³µí†µì›ì†Œë¡œ ì €ì¥í•¨
+ *
+ */
 public class No3_2_CommonElement {
 
-	
-	// °­ÀÇ Ç®ÀÌ (Á¤´ä)  
+
+	// ê°•ì˜ í’€ì´ (ì •ë‹µ)
 	public ArrayList<Integer> solution_2(int n, int[] oneArr, int m, int[] twoArr ) {
-		
+
 		ArrayList<Integer> answer = new ArrayList<Integer>();
-		
+
 		Arrays.sort(oneArr);
 		Arrays.sort(twoArr);
-		
+
 		int p1=0;
 		int p2=0;
-		
+
 		while(p1<n && p2<m) {
-			
-			if(oneArr[p1] ==twoArr[p2] ) { // ±³ÁıÇÕ 
+
+			if(oneArr[p1] ==twoArr[p2] ) { // êµì§‘í•©
 				answer.add(oneArr[p1]);
 				p1++;
-				p2++;	
+				p2++;
 			}else if(oneArr[p1] < twoArr[p2]) {
 				p1++;
 			}else{
@@ -80,52 +80,52 @@ public class No3_2_CommonElement {
 
 		return answer;
 	}
-	
-	
-	
-	// 20ºĞ¼Ò¿ä 
-	// ¿À´ä 
+
+
+
+	// 20ë¶„ì†Œìš”
+	// ì˜¤ë‹µ
 	public ArrayList<Integer> solution(int n, int[] oneArr, int m, int[] twoArr ) {
-		
+
 		ArrayList<Integer> answer = new ArrayList<Integer>();
-		
+
 		for(int oneElement:oneArr) {
 			for(int loop=0; loop<m; loop++) {
-				if(oneElement==twoArr[loop]) {		
+				if(oneElement==twoArr[loop]) {
 					answer.add(twoArr[loop]);
 				}
 			}
 		}
-		
+
 		Collections.sort(answer);
-		
-		
+
+
 		return answer;
 	}
-	
+
 	public static void main(String[] args) {
 
 		No3_2_CommonElement commonElement = new No3_2_CommonElement();
-		
+
 		Scanner scan = new Scanner(System.in);
-		
+
 		int n = scan.nextInt();
 		int [] oneArr = new int[n];
-		
+
 		for(int loop=0;loop<n;loop++) {
-			oneArr[loop] = scan.nextInt(); 
+			oneArr[loop] = scan.nextInt();
 		}
-		
+
 		int m = scan.nextInt();
 		int [] twoArr = new int[m];
-		
+
 		for(int loop2=0;loop2<m;loop2++) {
 			twoArr[loop2] = scan.nextInt();
 		}
-		
+
 		for(int x :commonElement.solution_2(n, oneArr, m, twoArr)) {
 			System.out.print(x+" ");
 		}
-		
+
 	}
 }

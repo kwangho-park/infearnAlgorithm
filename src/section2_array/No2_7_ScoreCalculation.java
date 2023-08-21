@@ -3,74 +3,74 @@ package section2_array;
 import java.util.Scanner;
 
 /**
- * [Á¡¼ö°è»ê]
- * ¼³¸í
- * OX ¹®Á¦´Â ¸Â°Å³ª Æ²¸° µÎ °æ¿ìÀÇ ´äÀ» °¡Áö´Â ¹®Á¦¸¦ ¸»ÇÑ´Ù.
- * ¿©·¯ °³ÀÇ OX ¹®Á¦·Î ¸¸µé¾îÁø ½ÃÇè¿¡¼­ ¿¬¼ÓÀûÀ¸·Î ´äÀ» ¸ÂÈ÷´Â °æ¿ì¿¡´Â °¡»êÁ¡À» ÁÖ±â À§ÇØ¼­ ´ÙÀ½°ú °°ÀÌ Á¡¼ö °è»êÀ» ÇÏ±â·Î ÇÏ¿´´Ù.
- * 1¹ø ¹®Á¦°¡ ¸Â´Â °æ¿ì¿¡´Â 1Á¡À¸·Î °è»êÇÑ´Ù. ¾ÕÀÇ ¹®Á¦¿¡ ´ëÇØ¼­´Â ´äÀ» Æ²¸®´Ù°¡ ´äÀÌ ¸Â´Â Ã³À½ ¹®Á¦´Â 1Á¡À¸·Î °è»êÇÑ´Ù.
- * ¶ÇÇÑ, ¿¬¼ÓÀ¸·Î ¹®Á¦ÀÇ ´äÀÌ ¸Â´Â °æ¿ì¿¡¼­ µÎ ¹øÂ° ¹®Á¦´Â 2Á¡, ¼¼ ¹øÂ° ¹®Á¦´Â 3Á¡, ..., K¹øÂ° ¹®Á¦´Â KÁ¡À¸·Î °è»êÇÑ´Ù. Æ²¸° ¹®Á¦´Â 0Á¡À¸·Î °è»êÇÑ´Ù.
- * ¿¹¸¦ µé¾î, ¾Æ·¡¿Í °°ÀÌ 10 °³ÀÇ OX ¹®Á¦¿¡¼­ ´äÀÌ ¸ÂÀº ¹®Á¦ÀÇ °æ¿ì¿¡´Â 1·Î Ç¥½ÃÇÏ°í, Æ²¸° °æ¿ì¿¡´Â 0À¸·Î Ç¥½ÃÇÏ¿´À» ¶§,
- * Á¡¼ö °è»êÀº ¾Æ·¡ Ç¥¿Í °°ÀÌ °è»êµÇ¾î, ÃÑ Á¡¼ö´Â 1+1+2+3+1+2=10 Á¡ÀÌ´Ù.
- * 
- * ½ÃÇè¹®Á¦ÀÇ Ã¤Á¡ °á°ú°¡ ÁÖ¾îÁ³À» ¶§, ÃÑ Á¡¼ö¸¦ °è»êÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
- * 
- * 
- * ÀÔ·Â
- * Ã¹Â° ÁÙ¿¡ ¹®Á¦ÀÇ °³¼ö N (1 ¡Â N ¡Â 100)ÀÌ ÁÖ¾îÁø´Ù. µÑÂ° ÁÙ¿¡´Â N°³ ¹®Á¦ÀÇ Ã¤Á¡ °á°ú¸¦ ³ªÅ¸³»´Â 0 È¤Àº 1ÀÌ ºó Ä­À» »çÀÌ¿¡ µÎ°í ÁÖ¾îÁø´Ù.
- * 0Àº ¹®Á¦ÀÇ ´äÀÌ Æ²¸° °æ¿ìÀÌ°í, 1Àº ¹®Á¦ÀÇ ´äÀÌ ¸Â´Â °æ¿ìÀÌ´Ù.
- * 
- * 
- * Ãâ·Â
- * Ã¹Â° ÁÙ¿¡ ÀÔ·Â¿¡¼­ ÁÖ¾îÁø Ã¤Á¡ °á°ú¿¡ ´ëÇÏ¿© °¡»êÁ¡À» °í·ÁÇÑ ÃÑ Á¡¼ö¸¦ Ãâ·ÂÇÑ´Ù.
- * 
- * 
- * ¿¹½Ã ÀÔ·Â 1 
+ * [ì ìˆ˜ê³„ì‚°]
+ * ì„¤ëª…
+ * OX ë¬¸ì œëŠ” ë§žê±°ë‚˜ í‹€ë¦° ë‘ ê²½ìš°ì˜ ë‹µì„ ê°€ì§€ëŠ” ë¬¸ì œë¥¼ ë§í•œë‹¤.
+ * ì—¬ëŸ¬ ê°œì˜ OX ë¬¸ì œë¡œ ë§Œë“¤ì–´ì§„ ì‹œí—˜ì—ì„œ ì—°ì†ì ìœ¼ë¡œ ë‹µì„ ë§žížˆëŠ” ê²½ìš°ì—ëŠ” ê°€ì‚°ì ì„ ì£¼ê¸° ìœ„í•´ì„œ ë‹¤ìŒê³¼ ê°™ì´ ì ìˆ˜ ê³„ì‚°ì„ í•˜ê¸°ë¡œ í•˜ì˜€ë‹¤.
+ * 1ë²ˆ ë¬¸ì œê°€ ë§žëŠ” ê²½ìš°ì—ëŠ” 1ì ìœ¼ë¡œ ê³„ì‚°í•œë‹¤. ì•žì˜ ë¬¸ì œì— ëŒ€í•´ì„œëŠ” ë‹µì„ í‹€ë¦¬ë‹¤ê°€ ë‹µì´ ë§žëŠ” ì²˜ìŒ ë¬¸ì œëŠ” 1ì ìœ¼ë¡œ ê³„ì‚°í•œë‹¤.
+ * ë˜í•œ, ì—°ì†ìœ¼ë¡œ ë¬¸ì œì˜ ë‹µì´ ë§žëŠ” ê²½ìš°ì—ì„œ ë‘ ë²ˆì§¸ ë¬¸ì œëŠ” 2ì , ì„¸ ë²ˆì§¸ ë¬¸ì œëŠ” 3ì , ..., Kë²ˆì§¸ ë¬¸ì œëŠ” Kì ìœ¼ë¡œ ê³„ì‚°í•œë‹¤. í‹€ë¦° ë¬¸ì œëŠ” 0ì ìœ¼ë¡œ ê³„ì‚°í•œë‹¤.
+ * ì˜ˆë¥¼ ë“¤ì–´, ì•„ëž˜ì™€ ê°™ì´ 10 ê°œì˜ OX ë¬¸ì œì—ì„œ ë‹µì´ ë§žì€ ë¬¸ì œì˜ ê²½ìš°ì—ëŠ” 1ë¡œ í‘œì‹œí•˜ê³ , í‹€ë¦° ê²½ìš°ì—ëŠ” 0ìœ¼ë¡œ í‘œì‹œí•˜ì˜€ì„ ë•Œ,
+ * ì ìˆ˜ ê³„ì‚°ì€ ì•„ëž˜ í‘œì™€ ê°™ì´ ê³„ì‚°ë˜ì–´, ì´ ì ìˆ˜ëŠ” 1+1+2+3+1+2=10 ì ì´ë‹¤.
+ *
+ * ì‹œí—˜ë¬¸ì œì˜ ì±„ì  ê²°ê³¼ê°€ ì£¼ì–´ì¡Œì„ ë•Œ, ì´ ì ìˆ˜ë¥¼ ê³„ì‚°í•˜ëŠ” í”„ë¡œê·¸ëž¨ì„ ìž‘ì„±í•˜ì‹œì˜¤.
+ *
+ *
+ * ìž…ë ¥
+ * ì²«ì§¸ ì¤„ì— ë¬¸ì œì˜ ê°œìˆ˜ N (1 â‰¤ N â‰¤ 100)ì´ ì£¼ì–´ì§„ë‹¤. ë‘˜ì§¸ ì¤„ì—ëŠ” Nê°œ ë¬¸ì œì˜ ì±„ì  ê²°ê³¼ë¥¼ ë‚˜íƒ€ë‚´ëŠ” 0 í˜¹ì€ 1ì´ ë¹ˆ ì¹¸ì„ ì‚¬ì´ì— ë‘ê³  ì£¼ì–´ì§„ë‹¤.
+ * 0ì€ ë¬¸ì œì˜ ë‹µì´ í‹€ë¦° ê²½ìš°ì´ê³ , 1ì€ ë¬¸ì œì˜ ë‹µì´ ë§žëŠ” ê²½ìš°ì´ë‹¤.
+ *
+ *
+ * ì¶œë ¥
+ * ì²«ì§¸ ì¤„ì— ìž…ë ¥ì—ì„œ ì£¼ì–´ì§„ ì±„ì  ê²°ê³¼ì— ëŒ€í•˜ì—¬ ê°€ì‚°ì ì„ ê³ ë ¤í•œ ì´ ì ìˆ˜ë¥¼ ì¶œë ¥í•œë‹¤.
+ *
+ *
+ * ì˜ˆì‹œ ìž…ë ¥ 1
  * 10
  * 1 0 1 1 1 0 0 1 1 0
- * 
- * ¿¹½Ã Ãâ·Â 1
+ *
+ * ì˜ˆì‹œ ì¶œë ¥ 1
  * 10
- * 
- * 
- * [·ÎÁ÷]
- * 1. int array¸¦ ¹Ýº¹ÇÏ¸é¼­ ¿ä¼ÒÀÇ °ªÀ» ºñ±³  
- * 2. ¿ä¼Ò°ªÀÌ Á¤´ä(1)ÀÎ °æ¿ì tocal score + score ÇÏ°í , score °ªÀº 1Áõ°¡ 
- * 3. ¿ä¼Ò°ªÀÌ ¿À´ä(0)ÀÎ °æ¿ì score °ªÀ» 1·Î ÃÊ±âÈ­ 
- * 4. total score (ÃÑ Á¡¼ö) Ãâ·Â 
- * 
- * [¹è¿îÁ¡]
- * JAVA È®Àå for¹®Àº ¹è¿­À» °ªÀ» ÀÐÀ» ¶§ ÁÖ·Î »ç¿ëÇÔ (forÆÄ¶ó¹ÌÅÍ¿¡ ¿ä¼Ò°ªÀÌ ¼øÂ÷ÀûÀ¸·Î ÀúÀå) 
- * 
- * 
+ *
+ *
+ * [ë¡œì§]
+ * 1. int arrayë¥¼ ë°˜ë³µí•˜ë©´ì„œ ìš”ì†Œì˜ ê°’ì„ ë¹„êµ
+ * 2. ìš”ì†Œê°’ì´ ì •ë‹µ(1)ì¸ ê²½ìš° tocal score + score í•˜ê³  , score ê°’ì€ 1ì¦ê°€
+ * 3. ìš”ì†Œê°’ì´ ì˜¤ë‹µ(0)ì¸ ê²½ìš° score ê°’ì„ 1ë¡œ ì´ˆê¸°í™”
+ * 4. total score (ì´ ì ìˆ˜) ì¶œë ¥
+ *
+ * [ë°°ìš´ì ]
+ * JAVA í™•ìž¥ forë¬¸ì€ ë°°ì—´ì„ ê°’ì„ ì½ì„ ë•Œ ì£¼ë¡œ ì‚¬ìš©í•¨ (foríŒŒë¼ë¯¸í„°ì— ìš”ì†Œê°’ì´ ìˆœì°¨ì ìœ¼ë¡œ ì €ìž¥)
+ *
+ *
  * @author kwang
  *
  */
 public class No2_7_ScoreCalculation {
 
-	// Á¤´ä (¼³°è/ÄÚµù 30ºÐ¼Ò¿ä) 
-	// °­ÀÇ Ç®ÀÌ¿Í °ÅÀÇ À¯»çÇÔ 
+	// ì •ë‹µ (ì„¤ê³„/ì½”ë”© 30ë¶„ì†Œìš”)
+	// ê°•ì˜ í’€ì´ì™€ ê±°ì˜ ìœ ì‚¬í•¨
 	public static void main(String[] args) {
-		
+
 		No2_7_ScoreCalculation ScoreCalculation = new No2_7_ScoreCalculation();
-		
+
 		Scanner scan = new Scanner(System.in);
 		int n = scan.nextInt();
 		int[] arr = new int[n];
-		
+
 		for(int loop=0;loop<n;loop++) {
 			arr[loop] = scan.nextInt();
 		}
-		
+
 		System.out.print(ScoreCalculation.solution(arr));
 
 	}
-	
-	
-	// Á¤´ä 
+
+
+	// ì •ë‹µ
 	public int solution(int[] arr) {
-		int result=0;		// ÃÑ Á¡¼ö
-		int score=1;		// ¹®Á¦º° Á¡¼ö 
-		
+		int result=0;		// ì´ ì ìˆ˜
+		int score=1;		// ë¬¸ì œë³„ ì ìˆ˜
+
 		for(int loop=0;loop<arr.length;loop++) {
 			if(arr[loop]==1) {
 				result += score;
@@ -79,11 +79,11 @@ public class No2_7_ScoreCalculation {
 				score=1;
 			}
 		}
-		
-		
+
+
 		return result;
 	}
-	
-	
+
+
 
 }

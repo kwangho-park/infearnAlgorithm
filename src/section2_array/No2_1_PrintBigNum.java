@@ -4,118 +4,118 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
-* ¼³¸í
-* N°³ÀÇ Á¤¼ö¸¦ ÀÔ·Â¹Ş¾Æ, ÀÚ½ÅÀÇ ¹Ù·Î ¾Õ ¼öº¸´Ù Å« ¼ö¸¸ Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
-* (Ã¹ ¹øÂ° ¼ö´Â ¹«Á¶°Ç Ãâ·ÂÇÑ´Ù)
-* 
-* 
-* ÀÔ·Â
-* Ã¹ ÁÙ¿¡ ÀÚ¿¬¼ö N(1<=N<=100)ÀÌ ÁÖ¾îÁö°í, ±× ´ÙÀ½ ÁÙ¿¡ N°³ÀÇ Á¤¼ö°¡ ÀÔ·ÂµÈ´Ù.
-*  
-* 
-* 
-* Ãâ·Â
-* ÀÚ½ÅÀÇ ¹Ù·Î ¾Õ ¼öº¸´Ù Å« ¼ö¸¸ ÇÑ ÁÙ·Î Ãâ·ÂÇÑ´Ù.
-* 
-* 
-* ¿¹½Ã ÀÔ·Â
-* 6
-* 7 3 9 5 6 12
-* 
-* ¿¹½Ã Ãâ·Â 
-* 7 9 6 12
-* 
-* [Áß¿ä] ¹è¿îÁ¡ 
-* 1. ºñ±³ÇØ¾ßÇÏ´Â °ªÀÌ ÀÚ¿¬¼öÀÌ±â ¶§¹®¿¡ int type À¸·Î ÀÔ·Â¹ŞÀ¸¸é ÀÌÈÄ¿¡ Ã³¸®ÇÏ±â°¡ ÆíÇÔ (String typeÀ¸·Î º¯È¯ÇÏ¸é ºñÈ¿À²ÀûÀÓ) 
-* 
-* 
-*/
+ * ì„¤ëª…
+ * Nê°œì˜ ì •ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„, ìì‹ ì˜ ë°”ë¡œ ì• ìˆ˜ë³´ë‹¤ í° ìˆ˜ë§Œ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”.
+ * (ì²« ë²ˆì§¸ ìˆ˜ëŠ” ë¬´ì¡°ê±´ ì¶œë ¥í•œë‹¤)
+ *
+ *
+ * ì…ë ¥
+ * ì²« ì¤„ì— ìì—°ìˆ˜ N(1<=N<=100)ì´ ì£¼ì–´ì§€ê³ , ê·¸ ë‹¤ìŒ ì¤„ì— Nê°œì˜ ì •ìˆ˜ê°€ ì…ë ¥ëœë‹¤.
+ *
+ *
+ *
+ * ì¶œë ¥
+ * ìì‹ ì˜ ë°”ë¡œ ì• ìˆ˜ë³´ë‹¤ í° ìˆ˜ë§Œ í•œ ì¤„ë¡œ ì¶œë ¥í•œë‹¤.
+ *
+ *
+ * ì˜ˆì‹œ ì…ë ¥
+ * 6
+ * 7 3 9 5 6 12
+ *
+ * ì˜ˆì‹œ ì¶œë ¥
+ * 7 9 6 12
+ *
+ * [ì¤‘ìš”] ë°°ìš´ì 
+ * 1. ë¹„êµí•´ì•¼í•˜ëŠ” ê°’ì´ ìì—°ìˆ˜ì´ê¸° ë•Œë¬¸ì— int type ìœ¼ë¡œ ì…ë ¥ë°›ìœ¼ë©´ ì´í›„ì— ì²˜ë¦¬í•˜ê¸°ê°€ í¸í•¨ (String typeìœ¼ë¡œ ë³€í™˜í•˜ë©´ ë¹„íš¨ìœ¨ì ì„)
+ *
+ *
+ */
 public class No2_1_PrintBigNum {
 
-	
-	// °­ÀÇ Ç®ÀÌ 
+
+	// ê°•ì˜ í’€ì´
 	public static void main(String[] args) {
-		
+
 		No2_1_PrintBigNum printBigNum = new No2_1_PrintBigNum();
-		
+
 		Scanner kb = new Scanner(System.in);
-		
+
 		int n =kb.nextInt();
-		
+
 		int[] arr = new int[n];
-		
+
 		for(int i=0;i<n;i++) {
 			arr[i] = kb.nextInt();
 		}
-		
-		// arraylist ¸¦ ¹İº¹ÇÏ¸é¼­ Ãâ·ÂÇÔ 
+
+		// arraylist ë¥¼ ë°˜ë³µí•˜ë©´ì„œ ì¶œë ¥í•¨
 		for(int x : printBigNum.solution(n, arr)) {
 			System.out.print(x+" ");
 		}
-		
+
 	}
-	
-	// °­ÀÇ Ç®ÀÌ 
+
+	// ê°•ì˜ í’€ì´
 	public ArrayList<Integer> solution(int n, int[] arr){
 		ArrayList<Integer> answer = new ArrayList<Integer>();
-		
+
 		answer.add(arr[0]);
 		for(int loop=1;loop<n;loop++) {
 			if(arr[loop] > arr[loop-1]) {
 				answer.add(arr[loop]);
 			}
 		}
-		
-		
+
+
 		return answer;
 	}
-	
-	
+
+
 	//------------------------------------------------
-	
-	
-	// Á¤´ä
-	// ³» Ç®ÀÌ  
+
+
+	// ì •ë‹µ
+	// ë‚´ í’€ì´
 	public static void main_pkh(String[] args) {
 
 		Scanner in = new Scanner(System.in);
 		String input1 = in.nextLine();
 		String input2 = in.nextLine();
-		
+
 		No2_1_PrintBigNum printBigNum = new No2_1_PrintBigNum();
-		
+
 		System.out.println(printBigNum.solution_pkh(input1, input2));
 
 	}
-	
-	// ³» Ç®ÀÌ
+
+	// ë‚´ í’€ì´
 	public String solution_pkh(String input1, String input2 ) {
 		String result="";
 		String[] StringArr = input2.split(" ");
 
 		int num1 = 0;
 		int num2 = 0;
-		
-		int length = Integer.parseInt(input1); 
-		
-		
+
+		int length = Integer.parseInt(input1);
+
+
 		for(int loop=0;loop<StringArr.length;loop++) {
-			
-			// Ã¹¹øÂ° ¼ö ³Ö±â
+
+			// ì²«ë²ˆì§¸ ìˆ˜ ë„£ê¸°
 			if(loop==0) {
-				result = StringArr[loop];	
-				
+				result = StringArr[loop];
+
 			}else {
 				num1 = Integer.parseInt(StringArr[loop-1] +"");
 				num2 = Integer.parseInt(StringArr[loop] +"");
-				
+
 				if(num1<num2) {
 					result += (" "+num2);
 				}
 			}
 		}
-		
-		
+
+
 		return result;
 	}
 

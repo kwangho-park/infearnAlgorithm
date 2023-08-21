@@ -5,33 +5,33 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
- * 2. °ýÈ£¹®ÀÚÁ¦°Å (stack)
- * ¼³¸í
- * ÀÔ·ÂµÈ ¹®ÀÚ¿­¿¡¼­ ¼Ò°ýÈ£ ( ) »çÀÌ¿¡ Á¸ÀçÇÏ´Â ¸ðµç ¹®ÀÚ¸¦ Á¦°ÅÇÏ°í ³²Àº ¹®ÀÚ¸¸ Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä.
+ * 2. ê´„í˜¸ë¬¸ìžì œê±° (stack)
+ * ì„¤ëª…
+ * ìž…ë ¥ëœ ë¬¸ìžì—´ì—ì„œ ì†Œê´„í˜¸ ( ) ì‚¬ì´ì— ì¡´ìž¬í•˜ëŠ” ëª¨ë“  ë¬¸ìžë¥¼ ì œê±°í•˜ê³  ë‚¨ì€ ë¬¸ìžë§Œ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ëž¨ì„ ìž‘ì„±í•˜ì„¸ìš”.
  *
- * ÀÔ·Â
- * Ã¹ ÁÙ¿¡ ¹®ÀÚ¿­ÀÌ ÁÖ¾îÁø´Ù. ¹®ÀÚ¿­ÀÇ ±æÀÌ´Â 100À» ³ÑÁö ¾Ê´Â´Ù.
+ * ìž…ë ¥
+ * ì²« ì¤„ì— ë¬¸ìžì—´ì´ ì£¼ì–´ì§„ë‹¤. ë¬¸ìžì—´ì˜ ê¸¸ì´ëŠ” 100ì„ ë„˜ì§€ ì•ŠëŠ”ë‹¤.
  *
- * Ãâ·Â
- * ³²Àº ¹®ÀÚ¸¸ Ãâ·ÂÇÑ´Ù.
+ * ì¶œë ¥
+ * ë‚¨ì€ ë¬¸ìžë§Œ ì¶œë ¥í•œë‹¤.
  *
  *
- * ¿¹½Ã ÀÔ·Â 1
+ * ì˜ˆì‹œ ìž…ë ¥ 1
  * (A(BC)D)EF(G(H)(IJ)K)LM(N)
  *
- * ¿¹½Ã Ãâ·Â 1
+ * ì˜ˆì‹œ ì¶œë ¥ 1
  * EFLM
  *
- * [·ÎÁ÷]
- * 1. ÀÔ·Â¹ÞÀº ¹®ÀÚ¿­À» char[] Å¸ÀÔÀ¸·Î º¯È¯
- * 2. ¹®ÀÚ¿­ char[]¹è¿­À» ¹Ýº¹ÇÏ¸é¼­ element ¸¦ stack object ¿¡ push
- * 3. ¹®ÀÚ¿­ÀÇ element Áß ´Ý´Â °ýÈ£ ')' °¡ ³ª¿À´Â °æ¿ì stack ³»ÀÇ element¸¦ '(' ±îÁö pop
- * 4. stack ÀÇ µ¥ÀÌÅÍ¸¦ ¹®ÀÚ¿­ answer ·Î Å¸ÀÔ º¯È¯ ÈÄ ¹ÝÈ¯
+ * [ë¡œì§]
+ * 1. ìž…ë ¥ë°›ì€ ë¬¸ìžì—´ì„ char[] íƒ€ìž…ìœ¼ë¡œ ë³€í™˜
+ * 2. ë¬¸ìžì—´ char[]ë°°ì—´ì„ ë°˜ë³µí•˜ë©´ì„œ element ë¥¼ stack object ì— push
+ * 3. ë¬¸ìžì—´ì˜ element ì¤‘ ë‹«ëŠ” ê´„í˜¸ ')' ê°€ ë‚˜ì˜¤ëŠ” ê²½ìš° stack ë‚´ì˜ elementë¥¼ '(' ê¹Œì§€ pop
+ * 4. stack ì˜ ë°ì´í„°ë¥¼ ë¬¸ìžì—´ answer ë¡œ íƒ€ìž… ë³€í™˜ í›„ ë°˜í™˜
  *
  */
 public class No5_2_RemoveParentheses {
 
-    // ¼³°è ¹× ÄÚµù 30ºÐ ¼Ò¿ä, Á¤´ä
+    // ì„¤ê³„ ë° ì½”ë”© 30ë¶„ ì†Œìš”, ì •ë‹µ
     public String solution(String s){
         String answer = "";
         Stack<Character> stack = new Stack<Character>();
