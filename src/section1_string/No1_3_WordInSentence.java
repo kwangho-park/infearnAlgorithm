@@ -3,7 +3,7 @@ package section1_string;
 import java.util.Scanner;
 
 /**
- * 문장 속 단어  <br>
+ * 문장 속 단어  (String)
  * 한 개의 문장이 주어지면 그 문장 속에서 가장 긴 단어를 출력하는 프로그램을 작성하세요.
  * 문장속의 각 단어는 공백으로 구분됩니다.
  *
@@ -12,6 +12,11 @@ import java.util.Scanner;
  *
  * 예시 : it is time to study -> study
  *
+ * [로직]
+ * 1. 문자열을 입력받음
+ * 2. 문자열을 String 을 요소로 갖는 배열로 변환
+ * 3. String [] 배열의 요소를 하나씩 조회하면서 길이가 가장 긴 요소를 탐색
+ *
  * @author kwang
  *
  */
@@ -19,7 +24,7 @@ public class No1_3_WordInSentence {
 
 
 	// 강의 풀이 1
-	public static void main(String args[]) {
+	public static void main_1(String args[]) {
 
 		String answer = "";
 
@@ -65,6 +70,29 @@ public class No1_3_WordInSentence {
 		System.out.println(result);
 
 	}
+
+
+	// [복습] 정답 : 10분소요
+	public static void main(String args[]){
+
+		String answer = "";
+		int length = 0;
+
+		Scanner in = new Scanner(System.in);
+
+		String input = in.nextLine();
+		String[] inputArr = input.split(" ");
+
+		for(String str:inputArr){
+			if(length<str.length()){
+				answer = str;
+				length = str.length();
+			}
+		}
+
+		System.out.println(answer);
+	}
+
 
 
 
