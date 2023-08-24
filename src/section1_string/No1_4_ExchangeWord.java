@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * N개의 단어가 주어지면 각 단어를 뒤집어 출력하는 프로그램을 작성하세요.
+ * N개의 단어가 주어지면 각 단어를 뒤집어 출력하는 프로그램을 작성하세요. (String) 
  *
  * 입력
  * 첫 줄에 자연수 N(3<=N<=20)이 주어집니다.
@@ -28,6 +28,9 @@ import java.util.Scanner;
  * = 1시간 소요 (nextInt() 의 사용방법을 정확하게 인지하지못해서 테스트 시간 딜레이가 발생함 )
  * 2. StringBuilder lib존재 및 사용법 확인
  *
+ * [로직]
+ * 1. 문자의 수와 문자입력받아 String[] 배열에 저장
+ * 2. StringBuilder 을 활용하여 String[] 배열을 반복하면서 문자 뒤집기
  *
  *
  *
@@ -36,8 +39,29 @@ import java.util.Scanner;
  */
 public class No1_4_ExchangeWord {
 
+
+	// 정답
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		System.out.println(n);
+
+		String[] strArr = new String[n];
+		for(int loop=0;loop< strArr.length;loop++){
+			strArr[loop] = in.nextLine();
+		}
+
+		for(String str : strArr){
+			StringBuilder sb = new StringBuilder(str);
+			System.out.println(sb.reverse());
+		}
+
+	}
+
+
+
 	// 강의 풀이
-	public static void main(String[] args) {
+	public static void main_1(String[] args) {
 
 		No1_4_ExchangeWord ExchangeWord = new No1_4_ExchangeWord();
 
