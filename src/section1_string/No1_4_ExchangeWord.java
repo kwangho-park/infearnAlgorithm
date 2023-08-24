@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * N개의 단어가 주어지면 각 단어를 뒤집어 출력하는 프로그램을 작성하세요. (String) 
+ * N개의 단어가 주어지면 각 단어를 뒤집어 출력하는 프로그램을 작성하세요. (String)
  *
  * 입력
  * 첫 줄에 자연수 N(3<=N<=20)이 주어집니다.
