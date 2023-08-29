@@ -31,8 +31,6 @@ import java.util.Scanner;
  * 4. 다음요소값이 크면 count 값을 증가 시킴
  * 5. count 값을 출력
  *
- * [중요] 배운점
- * 너무 조급하지말고 차분하게 풀어야 문제를 정확하게 이해할 수 있음
  *
  */
 public class No2_2_SeeStudent {

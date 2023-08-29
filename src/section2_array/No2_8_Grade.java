@@ -36,7 +36,6 @@ import java.util.Scanner;
  */
 public class No2_8_Grade {
 
-	// 로직이 감이 안잡힌 문제 (10분고민)
 	// 강의 풀이
 	// 재도전 예정
 	public static void main(String[] args) {
