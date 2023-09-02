@@ -29,7 +29,6 @@ import java.util.Scanner;
 public class No1_11_CompressionString {
 
 	// 정답, 강의 확인 예정
-	// 2시간 소요 (설계/코딩)
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		String input = in.nextLine();

@@ -28,7 +28,7 @@ import java.util.Scanner;
  * 2. StringBuilder vs StringBuffer
  * 공통점 : 문자열을 가변적으로 처리하기위한 클래스 (=java.lang 패키지)
  * 차이점 : StringBuffer 는 thread-safe 가 적용되어 muti thread 환경에서 사용 할 수 있으나, StringBuilder 는 적용되어있지 않기 떄문에 단일 thread 환경에서 사용함
- * 연산 성능비교 : StringBuffer > StringBuffer > String
+ * 연산 성능비교 : StringBuilder > StringBuffer > String
  *
  */
 public class No1_8_Palindrome {

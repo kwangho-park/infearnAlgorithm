@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /*
  * 큰 수 출력하기 (Array)
- *  설명
+ * 설명
  * N개의 정수를 입력받아, 자신의 바로 앞 수보다 큰 수만 출력하는 프로그램을 작성하세요.
  * (첫 번째 수는 무조건 출력)
  *
@@ -35,7 +35,7 @@ import java.util.Scanner;
  *
  * [로직]
  * 1. 정수의 갯수를 입력받아 int n 에 저장하고,  N개의 정수를 입력받아 ArrayList<Integer> inputArr 에 저장한다.
- * 2. inputArr 배열을 반복하면서 각요소의 값을 이전요소의 값과 비교하여 작은경우 배열에서 제거 (ArrayList 객의 remove 함수 )
+ * 2. inputArr 배열을 반복하면서 각요소의 값을 이전요소의 값과 비교하여 작은경우 배열에서 제거 (ArrayList 객체의 remove 함수 )
  *
  */
 public class No2_1_PrintBigNum {

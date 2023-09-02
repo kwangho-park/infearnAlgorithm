@@ -48,7 +48,6 @@ import java.util.Scanner;
 public class No1_12_Cipher {
 
 	// 틀림
-	// 1시간 이상 소요
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		String input1 = in.nextLine();

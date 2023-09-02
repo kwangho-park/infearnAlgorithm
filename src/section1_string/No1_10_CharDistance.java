@@ -30,7 +30,6 @@ public class No1_10_CharDistance {
 
 	// 풀지못함
 	// 1시간 30분이상 소요
-	// 강의를 들었으니 재 시도 해보자...
 	public static void main(String[] args) {
 
 		Scanner in = new Scanner(System.in);
