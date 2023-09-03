@@ -18,7 +18,7 @@
 
 * StringBuiler java doc : https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html   
 
-1.1.2 사용
+1.1.2 사용   
 String : 짧은 문자열인 경우 사용   
 StringBuffer : 스레드에 안전한 프로그램이 필요한 경우거나, thread에 안전한지 알수 없는 경우 사용   
 StringBuilder는 스레드에 안전한지 여부가 전혀 관계 없는 경우 사용  
