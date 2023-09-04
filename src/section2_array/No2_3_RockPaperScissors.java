@@ -3,6 +3,8 @@ package section2_array;
 import java.util.Scanner;
 
 /*
+ * 가위바위보 (Array)
+ *
  * 설명
  * A, B 두 사람이 가위바위보 게임을 합니다.
  * 총 N번의 게임을 하여 A가 이기면 A를 출력하고, B가 이기면 B를 출력합니다. 비길 경우에는 D를 출력합니다.
@@ -50,7 +52,6 @@ import java.util.Scanner;
  * 3. 그 이외의 경우는 B가 이기는경우임
  *
  * [중요] 배운점
- * - Scanner.nextInt() 함수는 띄어쓰기 또는 줄바꿈 기준으로 int type의 숫자를 입력받음
  * - 예외조건없는게 로직을 이해하기에 수훨함 (=직관적임)
  *
  */
@@ -64,8 +65,8 @@ public class No2_3_RockPaperScissors {
 		Scanner kb = new Scanner(System.in);
 		int n = kb.nextInt();
 
-		int[] A = new int[n];
-		int[] B = new int[n];
+		int[] A = new int[n];			// A 의 가위바위보 정보
+		int[] B = new int[n];			// B 의 가위바위보 정보
 
 		for(int loop=0;loop<n;loop++) {
 			A[loop] = kb.nextInt();
@@ -81,20 +82,21 @@ public class No2_3_RockPaperScissors {
 
 	}
 
-	// 강의 풀이 
+	// 강의 풀이
+	// 가위바위보의 규칙을 A를 기준으로 풀이함
 	public String solution(int n, int[] a, int[] b) {
 		String answer="";
 
 		for(int loop=0;loop<n;loop++) {
-			if(a[loop]==b[loop]) {
+			if(a[loop]==b[loop]) {					// 비김
 				answer+="D";
-			}else if(a[loop]==1 && b[loop]==3) {
+			}else if(a[loop]==1 && b[loop]==3) {	// (A가 이기는 경우) 가위 vs 보
 				answer+="A";
-			}else if(a[loop]==2 && b[loop]==1) {
+			}else if(a[loop]==2 && b[loop]==1) {	// (A가 이기는 경우) 바위 vs 가위
 				answer+="A";
-			}else if(a[loop]==3 && b[loop]==2) {
+			}else if(a[loop]==3 && b[loop]==2) {	// (A가 이기는 경우) 보  vs 바위
 				answer+="A";
-			}else {
+			}else {									// B 가 이기는 경우
 				answer+="B";
 			}
 		}
@@ -103,7 +105,7 @@ public class No2_3_RockPaperScissors {
 	}
 
 	// 정답
-	// 의외로 금방끝났지만 강의로직보다 복잡합  (로직설계 및 코딩 1시간 소요)
+	// 가위바위보의 규칙을 숫자로 풀이한 로직
 	public static void main_pkh(String[] args) {
 		No2_3_RockPaperScissors RockPaperScissors = new No2_3_RockPaperScissors();
 
