@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
- * 4. 피보나치 수열
+ * 4. 피보나치 수열 (array)
  *
  *
  * 설명
- * 1) 피보나키 수열을 출력한다. 피보나치 수열이란 앞의 2개의 수를 합하여 다음 숫자가 되는 수열이다.
+ * 1) 피보나치 수열을 출력한다. 피보나치 수열이란 앞의 2개의 수를 합하여 다음 숫자가 되는 수열이다.
  * 2) 입력은 피보나치 수열의 총 항의 수 이다. 만약 7이 입력되면 1 1 2 3 5 8 13을 출력하면 된다.
  *
  *
@@ -36,7 +36,16 @@ import java.util.Scanner;
 public class No2_4_Fibonacci {
 
 
-	public int[] solution(int n) {
+	// 강의 풀이
+	public static void main_inflearn(String[] args) {
+
+		No2_4_Fibonacci Fibonacci = new No2_4_Fibonacci();
+		Scanner kb = new Scanner(System.in);
+		int n=kb.nextInt();
+		for(int x : Fibonacci.solution_inflearn(n)) System.out.print(x+" ");
+
+	}
+	public int[] solution_inflearn(int n) {
 		int[] answer=new int[n];
 		answer[0]=1;
 		answer[1]=1;
@@ -46,15 +55,6 @@ public class No2_4_Fibonacci {
 		return answer;
 	}
 
-	// 강의 풀이
-	public static void main(String[] args) {
-
-		No2_4_Fibonacci Fibonacci = new No2_4_Fibonacci();
-		Scanner kb = new Scanner(System.in);
-		int n=kb.nextInt();
-		for(int x : Fibonacci.solution(n)) System.out.print(x+" ");
-
-	}
 
 	// 정답 (10~20분 소요)
 	public static void main_pkh(String[] args) {
@@ -77,5 +77,28 @@ public class No2_4_Fibonacci {
 		}
 
 	}
+
+	// 복습 (정답) (10분 소요)
+	public static void main(String[] args){
+		Scanner scanner = new Scanner(System.in);
+
+		int n = scanner.nextInt();		// 입력
+		int[] arr = new int[n];
+
+		// 초기값 셋팅
+		arr[0] = 1;
+		arr[1] = 1;
+
+		for(int loop=2;loop<arr.length;loop++){
+			arr[loop] = arr[loop-2] + arr[loop-1];
+		}
+
+		for(int num:arr){
+			System.out.print(num+" ");
+		}
+
+
+	}
+
 
 }
