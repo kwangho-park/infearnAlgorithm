@@ -18,17 +18,17 @@
 
 * StringBuiler java doc : https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html   
 
-1.1.2 사용
-String : 짧은 문자열인 경우 사용   
-StringBuffer : 스레드에 안전한 프로그램이 필요한 경우거나, thread에 안전한지 알수 없는 경우 사용   
-StringBuilder는 스레드에 안전한지 여부가 전혀 관계 없는 경우 사용  
+1.1.2 사용   
+String : 짧은 문자열인 경우 사용     
+StringBuffer : thread-safe 가 보장되기 때문에 멀티 스레드 환경에서 사용     
+StringBuilder : thread-safe 가 보장되지않기 때문에 단일 스레드 환경에서 빠른 연산이 필요한 경우에 사용   
+
+* thread-safe : 동시접근 시 정합성 보장되는 상태   
 
 ## 1.2 회문 문자열 (Palindrome)   
 - 정의 : 앞에서 읽을 때나 뒤에서 읽을 때나 같은 문자열을 회문 문자열   
 - 구현방법 : String 객체의 charAt() 함수 또는 StringBuilder 객체의 reverse() 함수 활용  
-  <img width="416" alt="회문 문자열" src="https://github.com/kwangho-park/inflearnAlgorithm/assets/44250982/6beb2c08-f62f-411c-9cba-48d5a2d01ee4">    
-  - 참고 : 'StringBuilder' 는 문자열을 가변적으로 처리하기위한 클래스이며, 'StringBuffer' 과 다르게 thread-safe 되지않아 단일 thread 환경에서 사용해야함   
-
+  <img width="416" alt="회문 문자열" src="https://github.com/kwangho-park/inflearnAlgorithm/assets/44250982/6beb2c08-f62f-411c-9cba-48d5a2d01ee4"> 
 
 # [session 3 : two pointer]     
 
