@@ -19,9 +19,11 @@
 * StringBuiler java doc : https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html   
 
 1.1.2 사용   
-String : 짧은 문자열인 경우 사용   
-StringBuffer : 스레드에 안전한 프로그램이 필요한 경우거나, thread에 안전한지 알수 없는 경우 사용   
-StringBuilder는 스레드에 안전한지 여부가 전혀 관계 없는 경우 사용  
+String : 짧은 문자열인 경우 사용     
+StringBuffer : thread-safe 가 보장되기 때문에 멀티 스레드 환경에서 사용     
+StringBuilder : thread-safe 가 보장되지않기 때문에 단일 스레드 환경에서 빠른 연산이 필요한 경우에 사용   
+
+* thread-safe : 동시접근 시 정합성 보장되는 상태   
 
 ## 1.2 회문 문자열 (Palindrome)   
 - 정의 : 앞에서 읽을 때나 뒤에서 읽을 때나 같은 문자열을 회문 문자열   
