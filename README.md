@@ -28,9 +28,7 @@ StringBuilder : thread-safe 가 보장되지않기 때문에 단일 스레드 �
 ## 1.2 회문 문자열 (Palindrome)   
 - 정의 : 앞에서 읽을 때나 뒤에서 읽을 때나 같은 문자열을 회문 문자열   
 - 구현방법 : String 객체의 charAt() 함수 또는 StringBuilder 객체의 reverse() 함수 활용  
-  <img width="416" alt="회문 문자열" src="https://github.com/kwangho-park/inflearnAlgorithm/assets/44250982/6beb2c08-f62f-411c-9cba-48d5a2d01ee4">    
-  - 참고 : 'StringBuilder' 는 문자열을 가변적으로 처리하기위한 클래스이며, 'StringBuffer' 과 다르게 thread-safe 되지않아 단일 thread 환경에서 사용해야함   
-
+  <img width="416" alt="회문 문자열" src="https://github.com/kwangho-park/inflearnAlgorithm/assets/44250982/6beb2c08-f62f-411c-9cba-48d5a2d01ee4"> 
 
 # [session 3 : two pointer]     
 
