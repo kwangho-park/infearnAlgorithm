@@ -74,8 +74,10 @@ public class No3_3_MaxSales {
 		return answer;
 	}
 
+	//---------------------------------------------------------------------------
+
 	// 강의 풀이 (정답)
-	public int solution(int n, int k, int[] arr) {
+	public int solution_inflearn(int n, int k, int[] arr) {
 		int sum=0;
 		int answer=0;
 
@@ -93,7 +95,7 @@ public class No3_3_MaxSales {
 		return answer;
 	}
 
-	public static void main(String[] args) {
+	public static void main_inflearn(String[] args) {
 
 		No3_3_MaxSales maxSales = new No3_3_MaxSales();
 
@@ -101,7 +103,7 @@ public class No3_3_MaxSales {
 		int n = in.nextInt();		// 전체 매출액 기간
 		int k = in.nextInt();		// 최대 매출액 기간
 
-		int[] sales = new int[n];
+		int[] sales = new int[n];	// 매출기록
 
 
 		for(int loop=0;loop<n;loop++) {
@@ -109,9 +111,42 @@ public class No3_3_MaxSales {
 			sales[loop] = in.nextInt();
 		}
 
-		System.out.print(maxSales.solution(n, k, sales));
+		System.out.print(maxSales.solution_inflearn(n, k, sales));
 
 
 	}
 
+	//---------------------------------------------------------------------------
+
+	public static void main(String[] args){
+
+		No3_3_MaxSales maxSales = new No3_3_MaxSales();
+
+		Scanner scanner = new Scanner(System.in);
+
+		int n = scanner.nextInt();	// 전체 매출액 기간
+		int k = scanner.nextInt();	// 최대 매출액 기간
+
+		int[] arr = new int[n];
+
+		for(int loop=0;loop<n;loop++){
+			arr[loop] = scanner.nextInt();
+		}
+
+		System.out.println(maxSales.solution(n,k,arr));
+
+	}
+
+	/**
+	 *
+	 * @param n	 	전체 매출액 기간
+	 * @param k		최대 매출액 기간
+	 * @param arr	매출액 리스트
+	 */
+	public int solution(int n, int k, int[] arr){
+
+		int answer = 0;
+
+		return answer;
+	}
 }
