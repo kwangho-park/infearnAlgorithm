@@ -51,19 +51,21 @@ import java.util.Scanner;
  */
 public class No3_3_MaxSales {
 
-	// 소요시간 : 20분... 디버깅중
-	// 정상값이 출력되지않고있음!
+	/**
+	 * 시간복잡도 : n * k
+	 *
+	 * @param n : 전체 매출액 갯수
+	 * @param k : 최대 매출액 기간
+	 * @param sales : 매출액 배열
+	 * @return
+	 */
 	public int solution_pkh(int n, int k, int[] sales) {
 		int answer=0;
 		int maxSales=0;
-		int startPointer = 0;		// sliding window 의 시작점 초기화
-		int endPointer = k;			// sliding window 의 종료점 초기화
 
-		// [의문점] 그냥 이중포문인데?? == sliding window ??
-		for(int loop1=0;loop1<sales.length-(k-1);loop1++) {
-			for(int loop2=0;loop2<endPointer;loop2++) {		// 최대매출액 기준 기간(k)동안의 Max sales 를 구함
-
-				maxSales += sales[loop1+loop2];
+		for(int startPointer=0;startPointer<(sales.length-k);startPointer++) {			// start pointer 증가기준으로 반복문 종료
+			for(int endPointer=startPointer;endPointer<endPointer+k;endPointer++) {
+				maxSales += sales[startPointer+endPointer];
 			}
 
 			if(answer<maxSales) {
@@ -75,25 +77,6 @@ public class No3_3_MaxSales {
 	}
 
 	//---------------------------------------------------------------------------
-
-	// 강의 풀이 (정답)
-	public int solution_inflearn(int n, int k, int[] arr) {
-		int sum=0;
-		int answer=0;
-
-		// 기준이되는 첫번째 window 생성
-		for(int i=0;i<k;i++) {
-			sum+=arr[i];
-		}
-		answer=sum;
-
-		for(int i=k;i<n;i++) {
-			sum+=(arr[i]-arr[i-k]);			// 왼쪽 요소는 뺴고 오른쪽 요소는 추가함
-			answer=Math.max(answer, sum);	// answer 과 sum 에서 큰값으로 answer에 저장함
-		}
-
-		return answer;
-	}
 
 	public static void main_inflearn(String[] args) {
 
@@ -115,9 +98,31 @@ public class No3_3_MaxSales {
 
 
 	}
+	// 강의 풀이 (정답)
+	public int solution_inflearn(int n, int k, int[] arr) {
+		int sum=0;
+		int answer=0;
+
+		// 기준이되는 첫번째 window 생성
+		for(int i=0;i<k;i++) {
+			sum+=arr[i];
+		}
+		answer=sum;
+
+		for(int i=k;i<n;i++) {
+			sum+=(arr[i]-arr[i-k]);			// 왼쪽 요소는 뺴고 오른쪽 요소는 추가함
+			answer=Math.max(answer, sum);	// answer 과 sum 에서 큰값으로 answer에 저장함
+		}
+
+		return answer;
+	}
+
+
 
 	//---------------------------------------------------------------------------
 
+
+	// 복습 (정답)
 	public static void main(String[] args){
 
 		No3_3_MaxSales maxSales = new No3_3_MaxSales();
@@ -138,15 +143,40 @@ public class No3_3_MaxSales {
 	}
 
 	/**
+	 * 시간복잡도 : O(n2)
 	 *
-	 * @param n	 	전체 매출액 기간
-	 * @param k		최대 매출액 기간
-	 * @param arr	매출액 리스트
+	 * @param n : 전체 매출액 갯수
+	 * @param k : 최대 매출액 기간
+	 * @param sales : 매출액 배열
+	 * @return
 	 */
-	public int solution(int n, int k, int[] arr){
+	public int solution(int n, int k, int[] sales){
+		int maxSales =0;
+		int salesInWindow = 0;
+		int tmp = 0;
+		
+		int startPointer = 0;
+		int endPointer = k;
+				
+		// 최대 매출액 초기값
+		for(int loop=0;loop<k;loop++){
+			salesInWindow +=sales[loop];
+		}
+		maxSales = salesInWindow;
+		
+		// sliding window 
+		for(int loop=0;loop<sales.length-k;loop++){				// endPointer 기준으로 반복종료 (exception 방지)
 
-		int answer = 0;
+			// window 이동 : 윈도우 내 매출액 - start pointer + end pointer
+			salesInWindow = salesInWindow - sales[loop] + sales[loop+k];
 
-		return answer;
+			if(salesInWindow>maxSales){
+				maxSales = salesInWindow;
+			}
+		}
+		
+		return maxSales;
 	}
+
+
 }
