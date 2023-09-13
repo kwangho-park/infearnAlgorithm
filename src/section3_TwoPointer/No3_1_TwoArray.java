@@ -17,7 +17,7 @@ import java.util.Scanner;
  * 세 번째 줄에 두 번째 배열의 크기 M(1<=M<=100)이 주어집니다.
  * 네 번째 줄에 M개의 배열 원소가 오름차순으로 주어집니다.
  *
- * 각 리스트의 원소는 int형 변수의 크기를 넘지 않습니다.
+ * 각 리스트의 원소는 int형 변수의 크기를 넘지 않습니다
  *
  * 출력
  * 오름차순으로 정렬된 배열을 출력합니다.
@@ -56,7 +56,7 @@ import java.util.Scanner;
  *
  *
  *
- * @author dream
+ * @author pkh
  *
  */
 public class No3_1_TwoArray {
@@ -81,32 +81,8 @@ public class No3_1_TwoArray {
 		return answer;
 
 	}
-
-	// [정답] 강의 풀이
-	public ArrayList<Integer> solution(int n, int m, int[] a, int[] b){
-		ArrayList<Integer> answer = new ArrayList<>();
-
-		int p1=0;		// 배열 a의 포인터
-		int p2=0;		// 배열 b의 포인터
-
-		while(p1<n && p2<m) {		// 둘 중 하나의 배열이 비교가 끝난경우 반복문을 종료함
-			if(a[p1]<b[p2]) {
-				answer.add(a[p1++]);
-			}else {
-				answer.add(b[p2++]);
-			}
-		}
-
-		// 남은 배열 요소를 결과에 추가
-		while(p1<n) answer.add(a[p1++]);
-		while(p2<m) answer.add(b[p2++]);
-
-
-		return answer;
-	}
-
-
-	public static void main(String[] args) {
+	// -----------------------------------------------------
+	public static void main_inflearn(String[] args) {
 
 		Scanner kb = new Scanner(System.in);
 
@@ -128,9 +104,83 @@ public class No3_1_TwoArray {
 		}
 
 		// 결과 출력
-		for(int x:TwoArray.solution(n, m, a, b)) System.out.print(x+" ");
+		for(int x:TwoArray.solution_inflearn(n, m, a, b)) System.out.print(x+" ");
 
 
+	}
+
+	// [정답] 강의 풀이
+	public ArrayList<Integer> solution_inflearn(int n, int m, int[] a, int[] b){
+		ArrayList<Integer> answer = new ArrayList<>();
+
+		int p1=0;		// 배열 a의 포인터
+		int p2=0;		// 배열 b의 포인터
+
+		while(p1<n && p2<m) {		// 둘 중 하나의 배열이 비교가 끝난경우 반복문을 종료함
+			if(a[p1]<b[p2]) {
+				answer.add(a[p1++]);
+			}else {
+				answer.add(b[p2++]);
+			}
+		}
+
+		// 남은 배열 요소를 결과에 추가
+		while(p1<n) answer.add(a[p1++]);
+		while(p2<m) answer.add(b[p2++]);
+
+
+		return answer;
+	}
+
+	// ------------------------------------------------------
+
+	// 복습 (정답)
+	public static void main(String[] args){
+
+		ArrayList<Integer> arr1 = new ArrayList<>();
+		ArrayList<Integer> arr2 = new ArrayList<>();
+		ArrayList<Integer> result = new ArrayList<>();
+
+		No3_1_TwoArray twoArray = new No3_1_TwoArray();
+
+		Scanner scan = new Scanner(System.in);
+
+		int n = scan.nextInt();					// 첫번째 배열의 크기
+
+		for(int loop=0;loop<n;loop++){
+			arr1.add(scan.nextInt());
+		}
+
+		int m = scan.nextInt();
+		for(int loop=0;loop<m;loop++){
+			arr2.add(scan.nextInt());
+		}
+
+		result = twoArray.solution(n,m,arr1,arr2);
+
+		for(int p:result){
+			System.out.print(p+" ");
+		}
+	}
+
+
+	public ArrayList<Integer> solution(int n, int m, ArrayList<Integer> arr1, ArrayList<Integer> arr2){
+		ArrayList<Integer> answer = new ArrayList<>();
+
+		int p1 = 0;
+		int p2 = 0;
+
+		while(p1<n && p2<m){
+			if(arr1.get(p1)>arr2.get(p2)){
+				answer.add(arr2.get(p2));
+				p2++;
+			}else{
+				answer.add(arr1.get(p1));
+				p1++;
+			}
+		}
+
+		return answer;
 	}
 
 }

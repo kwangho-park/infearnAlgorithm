@@ -1,7 +1,5 @@
 package section4_hash_set;
 
-import sun.applet.Main;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
