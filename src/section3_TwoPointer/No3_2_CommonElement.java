@@ -37,8 +37,7 @@ import java.util.*;
  *
  *
  * [배운점]
- * two pointer 알고리즘 :
- * 구글링보다 chatGPT 를 활용하면 검색이 조금더 수훨하고 빠름
+ * two pointer 알고리즘
  *
  *
  * [강의 로직]
@@ -53,9 +52,59 @@ import java.util.*;
  */
 public class No3_2_CommonElement {
 
+	public static void main_pkh(String[] args) {
+
+		No3_2_CommonElement commonElement = new No3_2_CommonElement();
+
+		Scanner scan = new Scanner(System.in);
+
+		int n = scan.nextInt();
+		int [] oneArr = new int[n];
+
+		for(int loop=0;loop<n;loop++) {
+			oneArr[loop] = scan.nextInt();
+		}
+
+		int m = scan.nextInt();
+		int [] twoArr = new int[m];
+
+		for(int loop2=0;loop2<m;loop2++) {
+			twoArr[loop2] = scan.nextInt();
+		}
+
+		for(int x :commonElement.solution_pkh(n, oneArr, m, twoArr)) {
+			System.out.print(x+" ");
+		}
+
+	}
+
+	// 20분소요
+	// 오답
+	public ArrayList<Integer> solution_pkh(int n, int[] oneArr, int m, int[] twoArr ) {
+
+		ArrayList<Integer> answer = new ArrayList<Integer>();
+
+		for(int oneElement:oneArr) {
+			for(int loop=0; loop<m; loop++) {
+				if(oneElement==twoArr[loop]) {
+					answer.add(twoArr[loop]);
+				}
+			}
+		}
+
+		Collections.sort(answer);
+
+
+		return answer;
+	}
+
+
+	//---------------------------------------
+
+
 
 	// 강의 풀이 (정답)
-	public ArrayList<Integer> solution_2(int n, int[] oneArr, int m, int[] twoArr ) {
+	public ArrayList<Integer> solution_inflearn(int n, int[] oneArr, int m, int[] twoArr ) {
 
 		ArrayList<Integer> answer = new ArrayList<Integer>();
 
@@ -81,51 +130,61 @@ public class No3_2_CommonElement {
 		return answer;
 	}
 
+	//---------------------------------------
+	// 복습
+	public static void main(String[] args){
+
+		Scanner scan = new Scanner(System.in);
+		No3_2_CommonElement commonElement = new No3_2_CommonElement();
+		ArrayList<Integer> answer = new ArrayList<>();
+
+		int n = scan.nextInt();		// a 배열의 수
+		int[] arrA = new int[n];
+
+		for(int loop=0;loop<n;loop++){
+			arrA[loop] = scan.nextInt();
+		}
+
+		int m = scan.nextInt();		// b 배열의 수
+		int[] arrB = new int[m];
+
+		for(int loop=0;loop<m;loop++){
+			arrB[loop] = scan.nextInt();
+		}
+
+		answer = commonElement.solution(n, arrA, m, arrB);
+
+		for(int a:answer){
+			System.out.print(a+" ");
+		}
 
 
-	// 20분소요
-	// 오답
-	public ArrayList<Integer> solution(int n, int[] oneArr, int m, int[] twoArr ) {
+	}
 
-		ArrayList<Integer> answer = new ArrayList<Integer>();
+	// 복습
+	public ArrayList<Integer> solution(int n, int[] arrA, int m, int[] arrB){
 
-		for(int oneElement:oneArr) {
-			for(int loop=0; loop<m; loop++) {
-				if(oneElement==twoArr[loop]) {
-					answer.add(twoArr[loop]);
-				}
+		ArrayList<Integer> answer = new ArrayList<>();
+		int p1=0;		// A 배열의 포인터
+		int p2=0;		// B 배열의 포인터
+
+		// 공통 요소 탐색 (two pointer)
+		for(int loop=0;loop<n;loop++){
+			if(arrA[p1] == arrB[p2]){
+				answer.add(arrA[p1]);
+				p1++;
+				p2++;
+			}else{
+				p2++;
 			}
 		}
 
+		// anwser 오름차순 정렬
 		Collections.sort(answer);
 
 
 		return answer;
 	}
 
-	public static void main(String[] args) {
 
-		No3_2_CommonElement commonElement = new No3_2_CommonElement();
-
-		Scanner scan = new Scanner(System.in);
-
-		int n = scan.nextInt();
-		int [] oneArr = new int[n];
-
-		for(int loop=0;loop<n;loop++) {
-			oneArr[loop] = scan.nextInt();
-		}
-
-		int m = scan.nextInt();
-		int [] twoArr = new int[m];
-
-		for(int loop2=0;loop2<m;loop2++) {
-			twoArr[loop2] = scan.nextInt();
-		}
-
-		for(int x :commonElement.solution_2(n, oneArr, m, twoArr)) {
-			System.out.print(x+" ");
-		}
-
-	}
 }
