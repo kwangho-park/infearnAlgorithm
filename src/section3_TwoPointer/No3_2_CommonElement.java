@@ -41,7 +41,7 @@ import java.util.*;
  *
  *
  * [강의 로직]
- * 1. 집합 A,B 를 오름차순 정렬
+ * 1. [중요] 집합 A,B 를 오름차순 정렬
  * 집합 A : 1 2 3 5 9
  * 집합 B : 2 3 5 7 8
  *
@@ -131,7 +131,7 @@ public class No3_2_CommonElement {
 	}
 
 	//---------------------------------------
-	// 복습
+	// 복습 (정답)
 	public static void main(String[] args){
 
 		Scanner scan = new Scanner(System.in);
@@ -161,26 +161,30 @@ public class No3_2_CommonElement {
 
 	}
 
-	// 복습
+	// 복습 (정답)
 	public ArrayList<Integer> solution(int n, int[] arrA, int m, int[] arrB){
 
 		ArrayList<Integer> answer = new ArrayList<>();
 		int p1=0;		// A 배열의 포인터
 		int p2=0;		// B 배열의 포인터
 
+		// 비교를 위한 오름차순 정렬
+		Arrays.sort(arrA);
+		Arrays.sort(arrB);
+
 		// 공통 요소 탐색 (two pointer)
-		for(int loop=0;loop<n;loop++){
-			if(arrA[p1] == arrB[p2]){
+		while(p1<n&&p2<m){					// A,B 배열 '모두 탐색' 후 반복문 종료
+
+			if(arrA[p1] == arrB[p2]){		// A배열과 B 배열의 element 비교
 				answer.add(arrA[p1]);
 				p1++;
 				p2++;
-			}else{
+			}else if(arrA[p1]<arrB[p2]){	// A배열의 다음 element와 비교를위해 pointer (p1) 를 다음 요소로 이동
+				p1++;
+			}else{							// B배열의 다음 element와 비교를위해 pointer (p2) 를 다음 요소로 이동
 				p2++;
 			}
 		}
-
-		// anwser 오름차순 정렬
-		Collections.sort(answer);
 
 
 		return answer;
@@ -188,3 +192,4 @@ public class No3_2_CommonElement {
 
 
 }
+
