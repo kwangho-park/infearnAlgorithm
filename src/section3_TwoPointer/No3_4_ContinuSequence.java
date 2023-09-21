@@ -68,9 +68,29 @@ public class No3_4_ContinuSequence {
 		return answer;
 	}
 
+	//--------------------------------------------------------------------------
+
+	public static void main_inflean(String[] args) {
+
+		No3_4_ContinuSequence ContinuSequence = new No3_4_ContinuSequence();
+
+		Scanner in = new Scanner(System.in);
+
+		int n = in.nextInt();
+		int m = in.nextInt();
+
+		int[] arr = new int[n];
+
+		for(int loop=0;loop<arr.length;loop++) {
+			arr[loop] = in.nextInt();
+		}
+
+		System.out.print(ContinuSequence.solution_inflean(n, m, arr));
+	}
+
 	// 강의풀이
 	///// 강의 로직을보고 다시 풀어봐야함
-	public int solution(int n, int m, int[] arr) {
+	public int solution_inflean(int n, int m, int[] arr) {
 		int answer=0;		// 카운트하는 변수
 		int sum=0;
 		int lt=0;			// left pointer
@@ -93,26 +113,49 @@ public class No3_4_ContinuSequence {
 		return answer;
 	}
 
+	//--------------------------------------------------------------------------
 
 
-	public static void main(String[] args) {
+	// 복습
+	public static void main(String[] args){
+		No3_4_ContinuSequence continuSequence = new No3_4_ContinuSequence();
 
-		No3_4_ContinuSequence ContinuSequence = new No3_4_ContinuSequence();
-
-		Scanner in = new Scanner(System.in);
-
-		int n = in.nextInt();
-		int m = in.nextInt();
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		int m = scan.nextInt();
 
 		int[] arr = new int[n];
 
-		for(int loop=0;loop<arr.length;loop++) {
-			arr[loop] = in.nextInt();
+		for(int loop=0;loop<n;loop++){
+			arr[loop] = scan.nextInt();
 		}
 
-		System.out.print(ContinuSequence.solution(n, m, arr));
+		System.out.print(continuSequence.solution(n,m,arr));
+	}
 
+	// 복습
+	public int solution(int n, int m, int[] arr){
+		int answer = 0;
+		int leftPointer=0;
+//		int rightPointer=1;
+		int tmp=0;
 
+		for(int rightPointer=1;rightPointer<n;rightPointer++){
+			tmp += arr[rightPointer];
+
+			if(tmp==m){
+				answer++;
+				tmp +=arr[rightPointer];
+			}else if(tmp<m){		// 오른쪽 포인터 이동
+				tmp +=arr[rightPointer];		/// out of bounds Exception
+			}else{					// 왼쪽 포인터 이동
+				tmp -=arr[leftPointer];
+				leftPointer++;
+			}
+			System.out.println("tmp : "+tmp+" / left pointer : "+leftPointer+" / right pointer : "+rightPointer +" / answer: "+ answer);
+		}
+
+		return answer;
 	}
 
 }
