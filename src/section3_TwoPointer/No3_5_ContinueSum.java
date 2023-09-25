@@ -54,16 +54,16 @@ public class No3_5_ContinueSum {
 		int sum=0;
 		int lt=1;
 
-		for(int rt=1;rt<n;rt++) {
-			sum+=rt;
+		for(int rt=1;rt<n;rt++) {		// right pointer 증가
+			sum+=rt;					// sum = sum + rt
 			if(sum==n) {
 				answer++;
 			}
 
-			while(sum>=n) {
-				sum-=lt;
+			while(sum>=n) {				// 합계의 구간변경이 필요한 경우
+				sum-=lt;				// sum = sum - lt
 				lt++;
-				if(sum==n ) {
+				if(sum==n ) {			// 변경한 구간의 합계가 n 과 동일한지 비교
 					answer++;
 				}
 			}
